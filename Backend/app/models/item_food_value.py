@@ -10,6 +10,7 @@ class ItemFoodValue(models.Model):
 
     title = models.CharField(max_length=255)
     value = models.PositiveIntegerField()
+    unit = models.CharField(max_length=30, default="گرم")
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
