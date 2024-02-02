@@ -12,6 +12,7 @@ class ItemViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
     """ """
 
     queryset = Item.objects.all()
+    lookup_field = "slug"
     permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend]
     filterset_class = ItemFilter

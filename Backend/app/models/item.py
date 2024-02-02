@@ -1,7 +1,6 @@
 from django.db import models
-from ..utils import round_to_nearest_thousand
 from autoslug import AutoSlugField
-from ..utils import custom_slugify
+from common.utils import custom_slugify, round_to_nearest_thousand
 from .category import Category
 
 
@@ -18,6 +17,8 @@ class Item(models.Model):
         populate_from="title",
         unique=True,
         slugify=custom_slugify,
+        null=True,
+        blank=True,
     )
     description = models.CharField(max_length=255, null=True, blank=True)
     ingredients = models.CharField(max_length=555, null=True, blank=True)
