@@ -9,7 +9,7 @@ ALLOWED_HOSTS = []
 DATABASES = {
     "default": {
         "ENGINE": "mysql.connector.django",
-        "NAME": "menu_manager",
+        "NAME": "restaurant",
         "USER": "root",
         "PASSWORD": "MO@142aheRTU",
         "HOST": "localhost",

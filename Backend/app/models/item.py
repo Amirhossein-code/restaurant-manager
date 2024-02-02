@@ -20,7 +20,7 @@ class Item(models.Model):
         slugify=custom_slugify,
     )
     description = models.CharField(max_length=255, null=True, blank=True)
-    Ingredients = models.CharField(max_length=555, null=True, blank=True)
+    ingredients = models.CharField(max_length=555, null=True, blank=True)
     image = models.ImageField(upload_to="item_images/", null=True, blank=True)
     category = models.ForeignKey(
         Category, on_delete=models.PROTECT, related_name="item_category"

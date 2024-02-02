@@ -16,7 +16,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
-    "djoser",
+    # "djoser",
     "django_filters",
     "debug_toolbar",
 ]
@@ -96,22 +96,22 @@ INTERNAL_IPS = [
 
 REST_FRAMEWORK = {
     "COERCE_DECIMAL_TO_STRING": False,
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ),
+    # "DEFAULT_AUTHENTICATION_CLASSES": (
+    #     "rest_framework_simplejwt.authentication.JWTAuthentication",
+    # ),
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
 
-DJOSER = {
-    "SERIALIZERS": {
-        "user_create": "core.serializers.UserCreateSerializer",
-        "current_user": "core.serializers.UserSerializer",
-    }
-}
+# DJOSER = {
+#     "SERIALIZERS": {
+#         "user_create": "core.serializers.UserCreateSerializer",
+#         "current_user": "core.serializers.UserSerializer",
+#     }
+# }
 
 # AUTH_USER_MODEL = "core.User"
 
-SIMPLE_JWT = {
-    "AUTH_HEADER_TYPES": ("JWT",),
-    "ACCESS_TOKEN_LIFETIME": timedelta(days=10),
-}
+# SIMPLE_JWT = {
+#     "AUTH_HEADER_TYPES": ("JWT",),
+#     "ACCESS_TOKEN_LIFETIME": timedelta(days=10),
+# }
