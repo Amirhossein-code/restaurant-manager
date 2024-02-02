@@ -14,7 +14,20 @@ class ItemSerializer(serializers.ModelSerializer):
             "description",
             "ingredients",
             "image",
-            # "created_at",
-            # "last_update",
+            "created_at",
+            "last_update",
+        ]
+        read_only_fields = ["id", "slug"]
+
+
+class SimpleItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Item
+        fields = [
+            "id",
+            "title",
+            "unit_price",
+            "category",
+            "slug",
         ]
         read_only_fields = ["id", "slug"]

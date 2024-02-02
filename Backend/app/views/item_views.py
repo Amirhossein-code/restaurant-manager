@@ -4,7 +4,8 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
 from ..models import Item
-from ..serializers import ItemSerializer
+from ..serializers import ItemSerializer, SimpleItemSerializer
+from ..filters import ItemFilter
 
 
 class ItemViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
@@ -13,8 +14,9 @@ class ItemViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
     queryset = Item.objects.all()
     permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend]
+    filterset_class = ItemFilter
 
     def get_serializer_class(self):
-        if self.action == "list":
+        if self.action == "retrieve":
             return ItemSerializer
-        return ItemSerializer
+        return SimpleItemSerializer

@@ -1,0 +1,3 @@
+Currently we do not need Aut backend cuaes thew website is static
+djoser = "*"
+djangorestframework-simplejwt = "*"
