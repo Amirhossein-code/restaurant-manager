@@ -7,41 +7,96 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Category',
+            name="Category",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=355)),
-                ('slug', autoslug.fields.AutoSlugField(blank=True, editable=False, null=True, populate_from='title', slugify=common.utils.custom_slug_utils.custom_slugify, unique=True)),
-                ('image', models.ImageField(blank=True, null=True, upload_to='category_images/')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=355)),
+                (
+                    "slug",
+                    autoslug.fields.AutoSlugField(
+                        blank=True,
+                        editable=False,
+                        null=True,
+                        populate_from="title",
+                        slugify=common.utils.custom_slug_utils.custom_slugify,
+                        unique=True,
+                    ),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True, null=True, upload_to="category_images/"
+                    ),
+                ),
             ],
             options={
-                'verbose_name_plural': 'Categories',
+                "verbose_name_plural": "Categories",
             },
         ),
         migrations.CreateModel(
-            name='Item',
+            name="Item",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=255)),
-                ('unit_price', models.PositiveIntegerField()),
-                ('slug', autoslug.fields.AutoSlugField(blank=True, editable=False, null=True, populate_from='title', slugify=common.utils.custom_slug_utils.custom_slugify, unique=True)),
-                ('description', models.CharField(blank=True, max_length=255, null=True)),
-                ('ingredients', models.CharField(blank=True, max_length=555, null=True)),
-                ('image', models.ImageField(blank=True, null=True, upload_to='item_images/')),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('last_update', models.DateTimeField(auto_now=True)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='item_category', to='app.category')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=255)),
+                ("unit_price", models.PositiveIntegerField()),
+                (
+                    "slug",
+                    autoslug.fields.AutoSlugField(
+                        blank=True,
+                        editable=False,
+                        null=True,
+                        populate_from="title",
+                        slugify=common.utils.custom_slug_utils.custom_slugify,
+                        unique=True,
+                    ),
+                ),
+                (
+                    "description",
+                    models.CharField(blank=True, max_length=255, null=True),
+                ),
+                (
+                    "ingredients",
+                    models.CharField(blank=True, max_length=555, null=True),
+                ),
+                (
+                    "image",
+                    models.ImageField(blank=True, null=True, upload_to="item_images/"),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("last_update", models.DateTimeField(auto_now=True)),
+                (
+                    "category",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="item_category",
+                        to="app.category",
+                    ),
+                ),
             ],
             options={
-                'verbose_name_plural': 'Items',
+                "verbose_name_plural": "Items",
             },
         ),
     ]

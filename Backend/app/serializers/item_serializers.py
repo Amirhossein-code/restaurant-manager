@@ -12,7 +12,7 @@ class ItemSerializer(serializers.ModelSerializer):
             "category",
             "slug",
             "description",
-            "ingredients",
+            "calorie",
             "image",
             "created_at",
             "last_update",

@@ -7,8 +7,6 @@ from .category import Category
 class Item(models.Model):
     """
     coffe : 255,555
-
-    Ingredients , description  merge?
     """
 
     title = models.CharField(max_length=255)
@@ -20,8 +18,9 @@ class Item(models.Model):
         null=True,
         blank=True,
     )
+
     description = models.CharField(max_length=255, null=True, blank=True)
-    ingredients = models.CharField(max_length=555, null=True, blank=True)
+    calorie = models.PositiveIntegerField(null=True, blank=True)
     image = models.ImageField(upload_to="item_images/", null=True, blank=True)
     category = models.ForeignKey(
         Category, on_delete=models.PROTECT, related_name="item_category"
@@ -38,3 +37,8 @@ class Item(models.Model):
 
     class Meta:
         verbose_name_plural = "Items"
+
+
+
+
+
