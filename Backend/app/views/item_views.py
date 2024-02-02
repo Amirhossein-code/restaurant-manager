@@ -1,6 +1,5 @@
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin
 from rest_framework.viewsets import GenericViewSet
-from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
 from ..models import Item
@@ -10,7 +9,6 @@ from ..pagination import ItemPagination
 
 
 class ItemViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
-    """ """
 
     queryset = Item.objects.all()
     lookup_field = "slug"

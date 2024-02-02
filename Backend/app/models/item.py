@@ -11,12 +11,14 @@ class Item(models.Model):
 
     title = models.CharField(max_length=255)
     unit_price = models.PositiveIntegerField()
+
     slug = AutoSlugField(
         populate_from="title",
         unique=True,
         slugify=custom_slugify,
         null=True,
         blank=True,
+        editable=True,
     )
 
     description = models.CharField(max_length=255, null=True, blank=True)
@@ -37,8 +39,3 @@ class Item(models.Model):
 
     class Meta:
         verbose_name_plural = "Items"
-
-
-
-
-

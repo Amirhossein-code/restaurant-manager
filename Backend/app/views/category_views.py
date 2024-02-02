@@ -9,7 +9,6 @@ from ..pagination import CategoryPagination
 
 
 class CategoryViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
-    """ """
 
     queryset = Category.objects.all()
     serializer_class = CategorySerializer

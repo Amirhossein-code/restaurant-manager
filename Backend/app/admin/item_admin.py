@@ -19,6 +19,7 @@ class ItemAdmin(admin.ModelAdmin):
     list_display = [
         "title",
         "unit_price",
+        "slug",  # Include the slug field here
         "category",
         "created_at",
         "last_update",
@@ -32,3 +33,15 @@ class ItemAdmin(admin.ModelAdmin):
         "created_at",
         "last_update",
     ]
+    fields = [
+        "title",
+        "unit_price",
+        "slug",
+        "description",
+        "calorie",
+        "image",
+        "category",
+        "created_at",
+        "last_update",
+    ]
+    readonly_fields = ["created_at", "last_update", "slug"]

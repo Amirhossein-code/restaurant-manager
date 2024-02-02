@@ -3,17 +3,16 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework.permissions import AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
 from ..models import ItemIngredient
-from ..serializers import ItemIngredientsSerializer
-from ..filters import ItemIngredientsFilter
+from ..serializers import ItemIngredientSerializer
+from ..filters import ItemIngredientFilter
 
 
 class ItemIngredientsViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
-    """ """
 
-    serializer_class = ItemIngredientsSerializer
+    serializer_class = ItemIngredientSerializer
     permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend]
-    filterset_class = ItemIngredientsFilter
+    filterset_class = ItemIngredientFilter
 
     def get_queryset(self):
         item_slug = self.kwargs["item_slug"]
