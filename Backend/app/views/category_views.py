@@ -5,6 +5,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from ..models import Category
 from ..serializers import CategorySerializer, SimpleCategorySerializer
 from ..filters import CategoryFilter
+from ..pagination import CategoryPagination
 
 
 class CategoryViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
@@ -16,6 +17,7 @@ class CategoryViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
     permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend]
     filterset_class = CategoryFilter
+    pagination_class = CategoryPagination
 
     def get_serializer_class(self):
         if self.action == "retrieve":

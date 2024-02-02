@@ -4,6 +4,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from app.models import Item
 from ..serializers import ItemAdminSerializer
 from ..filters import ItemAdminFilter
+from ..pagination import ItemAdminPagination
 
 
 class ItemAdminViewSet(ModelViewSet):
@@ -16,3 +17,4 @@ class ItemAdminViewSet(ModelViewSet):
     # permission_classes = [IsAdminUser]
     filter_backends = [DjangoFilterBackend]
     filterset_class = ItemAdminFilter
+    pagination_class = ItemAdminPagination
