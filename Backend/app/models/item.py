@@ -34,3 +34,6 @@ class Item(models.Model):
     def save(self, *args, **kwargs):
         self.unit_price = round_to_nearest_thousand(self.unit_price)
         super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name_plural = "Items"
