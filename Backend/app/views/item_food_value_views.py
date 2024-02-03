@@ -7,7 +7,7 @@ from ..serializers import ItemFoodValueSerializer
 from ..filters import ItemFoodValueFilter
 
 
-class ItemFoodValuesViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
+class ItemFoodValueViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
 
     serializer_class = ItemFoodValueSerializer
     permission_classes = [AllowAny]

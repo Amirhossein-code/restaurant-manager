@@ -10,11 +10,9 @@ router.register("items", views.ItemViewSet, basename="items")
 
 items_router = NestedDefaultRouter(router, "items", lookup="item")
 items_router.register(
-    "ingredients", views.ItemIngredientsViewSet, basename="ingredients"
+    "ingredients", views.ItemIngredientViewSet, basename="ingredients"
 )
-items_router.register(
-    "food-values", views.ItemFoodValuesViewSet, basename="food-values"
-)
+items_router.register("food-values", views.ItemFoodValueViewSet, basename="food-values")
 
 
 urlpatterns = router.urls + items_router.urls

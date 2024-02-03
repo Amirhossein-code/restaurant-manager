@@ -19,7 +19,6 @@ class ItemAdmin(admin.ModelAdmin):
     list_display = [
         "title",
         "unit_price",
-        "slug",  # Include the slug field here
         "category",
         "created_at",
         "last_update",
