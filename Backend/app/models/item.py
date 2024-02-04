@@ -1,6 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
-from common.utils import custom_slugify, round_to_nearest_thousand
+from common.utils import custom_slugify, round_to_nearest_hundred
 from .category import Category
 
 
@@ -22,7 +22,6 @@ class Item(models.Model):
     )
 
     description = models.CharField(max_length=255, null=True, blank=True)
-    calorie = models.PositiveIntegerField(null=True, blank=True)
     image = models.ImageField(upload_to="item_images/", null=True, blank=True)
     category = models.ForeignKey(
         Category, on_delete=models.PROTECT, related_name="item_category"
@@ -34,7 +33,14 @@ class Item(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.unit_price = round_to_nearest_thousand(self.unit_price)
+        # Check if the title has changed
+        if self.pk is not None:  # Check if the instance is already saved
+            old_item = Item.objects.get(pk=self.pk)
+            if self.title != old_item.title:
+                # Regenerate the slug based on the updated title
+                self.slug = custom_slugify(self.title)
+
+        self.unit_price = round_to_nearest_hundred(self.unit_price)
         super().save(*args, **kwargs)
 
     class Meta:

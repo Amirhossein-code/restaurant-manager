@@ -14,6 +14,7 @@ pillow = "*"
 mysql-connector-python = "*"
 django-debug-toolbar = "*"
 django-filter = "*"
+python-dotenv = "*"
 
 [dev-packages]
 model-bakery = "*"

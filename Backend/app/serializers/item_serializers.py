@@ -12,7 +12,6 @@ class ItemSerializer(serializers.ModelSerializer):
             "category",
             "slug",
             "description",
-            "calorie",
             "image",
             "created_at",
             "last_update",

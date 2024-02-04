@@ -20,7 +20,7 @@ class ItemAdmin(admin.ModelAdmin):
         "title",
         "unit_price",
         "category",
-        "created_at",
+        "slug",
         "last_update",
     ]
     search_fields = [
@@ -37,7 +37,6 @@ class ItemAdmin(admin.ModelAdmin):
         "unit_price",
         "slug",
         "description",
-        "calorie",
         "image",
         "category",
         "created_at",

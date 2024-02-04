@@ -25,7 +25,6 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "app",
-    "weblog",
     "common",
     "core",
 ]
