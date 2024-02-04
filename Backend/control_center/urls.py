@@ -2,6 +2,7 @@ from rest_framework_nested.routers import NestedDefaultRouter
 from rest_framework_nested import routers
 from . import views
 
+app_name = "control_center"
 router = routers.DefaultRouter()
 
 router.register("items", views.ItemAdminViewSet, basename="items")

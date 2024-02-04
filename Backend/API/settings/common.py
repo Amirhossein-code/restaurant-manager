@@ -25,6 +25,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "app",
     "common",
+    "control_center",
     "core",
 ]
 

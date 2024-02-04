@@ -8,13 +8,25 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-DATABASES = {
-    "default": {
-        "ENGINE": "mysql.connector.django",
-        "NAME": os.environ.get("DB_NAME"),
-        "USER": os.environ.get("DB_USER"),
-        "PASSWORD": os.environ.get("DB_PASSWORD"),
-        "HOST": os.environ.get("DB_HOST"),
-        "PORT": os.environ.get("DB_PORT"),
+# if os.getenv("DJANGO_SETTINGS_FILE") == "API.settings.local":
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "mysql.connector.django",
+#             "NAME": "restaurant",
+#             "USER": "root",
+#             "PASSWORD": "MO@142aheRTU",
+#             "HOST": "localhost",
+#             "PORT": "3306",
+#         }
+#     }
+if os.getenv("DJANGO_SETTINGS_FILE") == "API.settings.local":
+    DATABASES = {
+        "default": {
+            "ENGINE": "mysql.connector.django",
+            "NAME": os.environ.get("DB_NAME"),
+            "USER": os.environ.get("DB_USER"),
+            "PASSWORD": os.environ.get("DB_PASSWORD"),
+            "HOST": os.environ.get("DB_HOST"),
+            "PORT": os.environ.get("DB_PORT"),
+        }
     }
-}

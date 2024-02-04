@@ -12,15 +12,16 @@ SECRET_KEY = os.getenv(
 
 DEBUG = True
 
-DATABASES = {
-    "default": {
-        "ENGINE": "mysql.connector.django",
-        "NAME": os.getenv("MYSQL_DATABASE", ""),
-        "USER": os.getenv("MYSQL_USER", ""),
-        "PASSWORD": os.getenv("MYSQL_PASSWORD", ""),
-        "HOST": os.getenv("DB_HOST", "db"),
-        "PORT": "3306",
+if os.getenv("DJANGO_SETTINGS_FILE") == "API.settings.docker":
+    DATABASES = {
+        "default": {
+            "ENGINE": "mysql.connector.django",
+            "NAME": os.getenv("MYSQL_DATABASE", ""),
+            "USER": os.getenv("MYSQL_USER", ""),
+            "PASSWORD": os.getenv("MYSQL_PASSWORD", ""),
+            "HOST": os.getenv("DB_HOST", "db"),
+            "PORT": "3306",
+        }
     }
-}
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")

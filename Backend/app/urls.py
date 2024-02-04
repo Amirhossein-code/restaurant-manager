@@ -3,6 +3,7 @@ from rest_framework_nested import routers
 from rest_framework_nested.routers import NestedDefaultRouter
 from . import views
 
+app_name = "app"
 router = routers.DefaultRouter()
 
 router.register("categories", views.CategoryViewSet, basename="categories")
