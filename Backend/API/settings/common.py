@@ -18,7 +18,6 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "djoser",
     "django_filters",
-    "model_bakery",
     "debug_toolbar",
 ]
 
