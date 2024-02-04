@@ -41,14 +41,14 @@ model-bakery = "*"
 python_version = "3.10"
 ```
 
-set up dependencies
++set up dependencies
 pipenv update
 
-Set up Databse 
++Set up Databse 
 fisrt create a databse im mysql workbench
 CREATE DATABASE example;
 
-Create .env file
++Create .env file
 configure the variables 
 ```
 DB_NAME=example
@@ -58,11 +58,11 @@ DB_HOST=localhost
 DB_PORT=3306
 ```
 
-Creating databse schema
++Creating databse schema
 python manage.py migrate
 
-Create first admin
++Create first admin
 python manage.py createsuperuser
 
-Runserver 
++Runserver 
 python manage.py runserver

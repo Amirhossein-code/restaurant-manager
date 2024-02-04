@@ -12,3 +12,4 @@ class ItemFoodValueAdminSerializer(serializers.ModelSerializer):
             "unit",
             "item",
         ]
+        read_only_fields = ["id"]

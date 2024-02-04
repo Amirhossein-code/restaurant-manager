@@ -14,7 +14,7 @@ class ItemAdminViewSet(ModelViewSet):
     serializer_class = ItemAdminSerializer
     lookup_field = "slug"
 
-    # permission_classes = [IsAdminUser]
+    permission_classes = [IsAdminUser]
     filter_backends = [DjangoFilterBackend]
     filterset_class = ItemAdminFilter
     pagination_class = ItemAdminPagination

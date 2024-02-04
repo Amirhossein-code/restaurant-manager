@@ -12,9 +12,13 @@ class ItemAdminSerializer(serializers.ModelSerializer):
             "category",
             "slug",
             "description",
-            "ingredients",
             "image",
             "created_at",
             "last_update",
         ]
-        read_only_fields = ["id", "slug"]
+        read_only_fields = [
+            "id",
+            "slug",
+            "created_at",
+            "last_update",
+        ]

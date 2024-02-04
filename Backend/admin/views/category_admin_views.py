@@ -14,7 +14,7 @@ class CategoryAdminViewSet(ModelViewSet):
     serializer_class = CategoryAdminSerializer
     lookup_field = "slug"
 
-    # permission_classes = [IsAdminUser]
+    permission_classes = [IsAdminUser]
     filter_backends = [DjangoFilterBackend]
     filterset_class = CategoryAdminFilter
     pagination_class = CategoryAdminPagination

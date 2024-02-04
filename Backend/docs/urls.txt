@@ -1,0 +1,26 @@
+base on system 
+http://127.0.0.1:8000
+
+django-admin endpoint
+http://127.0.0.1:8000/admin/
+
+categories
+http://127.0.0.1:8000/app/categories/
+
+items
+http://127.0.0.1:8000/app/items/
+
+retrieve items
+/app/items/<item-slug>/
+
+Item ingredients
+/app/items/<item-slug>/ingredients/
+
+retrieve Item ingredients
+/app/items/<item-slug>/ingredients/<item_ingredient_id>/
+
+Item food values
+/app/items/<item-slug>/food-values/
+
+retrieve Item food values
+/app/items/<item-slug>/food-values/<food_value_id>/
