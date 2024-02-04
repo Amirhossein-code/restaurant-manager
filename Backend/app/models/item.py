@@ -24,7 +24,7 @@ class Item(models.Model):
     description = models.CharField(max_length=255, null=True, blank=True)
     image = models.ImageField(upload_to="item_images/", null=True, blank=True)
     category = models.ForeignKey(
-        Category, on_delete=models.PROTECT, related_name="item_category"
+        Category, on_delete=models.CASCADE, related_name="item_category"
     )
     created_at = models.DateTimeField(auto_now_add=True)
     last_update = models.DateTimeField(auto_now=True)

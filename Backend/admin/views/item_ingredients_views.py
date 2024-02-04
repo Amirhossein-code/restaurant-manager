@@ -16,3 +16,6 @@ class ItemIngredientAdminViewSet(ModelViewSet):
     def get_queryset(self):
         item_slug = self.kwargs["item_slug"]
         return ItemIngredient.objects.filter(item__slug=item_slug)
+
+    def get_serializer_context(self):
+        return {"item_slug": self.kwargs["item_slug"]}
