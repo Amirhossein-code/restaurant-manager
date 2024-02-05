@@ -62,7 +62,7 @@ body.dark {
 
 .categori-container {
     width: 100%;
-    height: 100%;
+    height: auto;
     margin-top: 2rem;
 }
 
@@ -245,3 +245,57 @@ body.dark {
 }
 
 /*footer*/
+
+
+
+
+
+
+
+
+
+
+
+/*tab and desktop mode*/
+.tab-mode .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+
+
+
+
+
+
+
+
+.animated {
+
+    animation: showAnime forwards ease-in;
+    opacity: 0;
+    transition: all 0.5;
+}
+
+@keyframes showAnime {
+
+    30% {
+        transform: translateX(0) translateY(0) rotate(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateX(0) translateY(0) rotate(0);
+        opacity: 1;
+
+    }
+}

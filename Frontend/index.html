@@ -6,12 +6,11 @@
 
         <link rel="stylesheet" href="assest/css/style.css">
         <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css"
             rel="stylesheet">
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="/lib/animate/animate.css">
         <link rel="stylesheet" href="lib/animate/animate.min.css">
+        <link rel="stylesheet" href="lib/animate/animate.css">
 
         <!-- Customized Bootstrap Stylesheet -->
         <link rel="stylesheet"
@@ -22,15 +21,17 @@
     </head>
     <body id="body" class="body dark" theme="dark">
         <!-- mobile mode -->
-        <div class="mobile-mode">
+        <div class="mobile-mode  d-flex">
             <div class="container">
                 <div class="header text-center">
                     <p>say hello to banner</p>
                 </div>
-                <div class="menu-body">
-                    <div class="categori-container">
-                        <div class="swiper">
-                            <div class="swiper-wrapper" id="#menu-filter">
+                <div class="menu-body" id="mobile-menu-body">
+                    <div class="categori-container"
+                        id="mobile-categori-container">
+                        <div class="swiper" id="mobile-swiper" dir="rtl">
+                            <div class="swiper-wrapper"
+                                id="mobile-swiper-wrapper">
                                 <div class="swiper-slide" target-menu="burger">
                                     <div class="categori-card">
                                         <div class="categori-icon">
@@ -99,7 +100,7 @@
                             class="burger menu-list justify-content-md-between w-100 mx-1 ">
                             <div class="row w-100 mx-auto">
                                 <div
-                                    class="col-12 col-md-6 menu-item  col-lg-4  row  wow fadeInRight">
+                                    class="col-12 col-md-6 menu-item  col-lg-4  row ">
                                     <div class="col-12 img-name row">
                                         <div class="col-5 item-img">
                                             <img src="assest/img/burger1.jpg"
@@ -132,7 +133,7 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="col-12 col-md-6 menu-item  col-lg-4  row wow fadeInRight ">
+                                    class="col-12 col-md-6 menu-item  col-lg-4  row ">
                                     <div class="col-12 img-name row">
                                         <div class="col-5 item-img">
                                             <img src="assest/img/burger2.jpg"
@@ -165,7 +166,7 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="col-12 col-md-6 menu-item  col-lg-4  row  wow fadeInRight">
+                                    class="col-12 col-md-6 menu-item  col-lg-4  row  ">
                                     <div class="col-12 img-name row">
                                         <div class="col-5 item-img">
                                             <img src="assest/img/burger3.jpg"
@@ -197,7 +198,7 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="col-12 col-md-6 menu-item  col-lg-4  row wow fadeInRight ">
+                                    class="col-12 col-md-6 menu-item  col-lg-4  row ">
                                     <div class="col-12 img-name row">
                                         <div class="col-5 item-img">
                                             <img src="assest/img/burger4.jpg"
@@ -779,6 +780,15 @@
             </div>
         </div>
 
+        <!--tab and desktop mode-->
+        <div class="tab-mode  d-none">
+            <div class="container row">
+                <div class="menu-side col-9">
+
+                </div>
+                <div class="info-side col-3"></div>
+            </div>
+        </div>
         <!--bootstrap js link-->
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

@@ -19,7 +19,11 @@ DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
 Run the following command to build and run Docker containers:
 
 ```
-docker-compose up --build
+docker-compose up --build 
+```
+
+```
+docker-compose up -d
 ```
 
 This command will build your Docker containers according to the specifications in the `docker-compose.yml` file and start your application.
