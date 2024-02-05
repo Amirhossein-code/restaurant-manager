@@ -1,0 +1,247 @@
+@import url(https://db.onlinewebfonts.com/c/3231c6a7b3ba5a66dd21bfc6b461165e?family=YekanBakh-Heavy);
+
+:root {
+    --green-background-: #489854;
+    --grey-background-: #F4F4F4;
+    --white-background-: ghostwhite;
+    --order-button-color-: #D90007;
+    --order-button-radius-: 12px;
+    --bg-color-: white;
+    --front-color-: #f5f5f5;
+    --dark-bg-color-: : #111827;
+    --dark-front-clr--: #0b1d35;
+}
+
+body.body#body {
+    background-color: var(--bg-color-);
+    width: 100%;
+    height: 100vh;
+    font-family: "YekanBakh-Heavy";
+    position: relative;
+}
+
+body.dark {
+    background-color: var(--dark-bg-color-);
+}
+
+.mobile-mode {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    width: 90%;
+    height: 12vh;
+    background-color: var(--green-background-);
+    margin-bottom: 3rem;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    z-index: 3;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    background-color: var(--order-button-color-);
+    width: 100%;
+    max-width: 300%;
+    height: 220%;
+    position: absolute;
+    border: 7px solid ghostwhite;
+    border-radius: 100%;
+    z-index: 1;
+    left: -50%;
+    top: -35%;
+}
+
+.menu-body {
+    width: 100%;
+    height: 100%;
+}
+
+.categori-container {
+    width: 100%;
+    height: 100%;
+    margin-top: 2rem;
+}
+
+.categori-card {
+    background-color: var(--grey-background-);
+    height: 90%;
+    width: 75%;
+    min-height: 50%;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 0;
+    padding: 0 6px;
+}
+
+.categori-card:hover,
+.categori-card.active {
+    background: var(--green-background-);
+}
+
+.categori-icon img {
+    width: 100%;
+    height: auto;
+    /* background-color: rgba(248, 248, 255, 0.903); */
+    padding: 5px 0 0;
+    border-radius: 50%;
+    box-sizing: initial;
+}
+
+.categori-icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.categori-name {
+    font-weight: bold;
+    font-size: .9em;
+    margin-bottom: .5rem;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    float: right;
+    animation: backInRight;
+    animation-duration: 1s;
+    height: 100%;
+    width: 100%;
+}
+
+.swiper {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.menu-list-container {
+    width: 100%;
+    height: 90vh;
+    margin-block: 3rem;
+}
+
+.menu-list,
+.menu-list .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-list-container .menu-item {
+    padding: 10px 0;
+    height: 255;
+    margin-block: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--front-color-);
+    box-shadow: 1px 1px 5px var(--grey-background-);
+    margin-right: 0.5rem;
+    width: 95%;
+    direction: rtl;
+}
+
+.img-name,
+.price-order {
+    width: 100%;
+}
+
+.img-name {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    height: 60%;
+    width: 100%;
+}
+
+.item-img {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    width: 1005;
+    height: 100%;
+}
+
+.item-img img {
+    border-radius: 50%;
+    padding: 1pxs;
+    width: 110%;
+    height: 100%;
+
+}
+
+.item-name {
+    width: 55%;
+    height: 50%;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.price-order {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-direction: row-reverse;
+}
+
+.item-order {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-left: 0%;
+}
+
+.order-btn {
+    padding: 0px 8px;
+    width: 88px;
+    height: 34px;
+    border: none;
+    outline: none;
+    background-color: var(--order-button-color-);
+    border-radius: var(--order-button-radius-);
+    color: ghostwhite;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.old-price {
+    text-decoration: line-through;
+}
+
+.product-name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.product-caption {
+    font-size: 14px;
+    align-self: flex-start;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+}
+
+/*footer*/
