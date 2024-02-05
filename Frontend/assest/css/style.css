@@ -27,6 +27,7 @@ body.dark {
 .mobile-mode {
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .header {
@@ -79,6 +80,8 @@ body.dark {
     cursor: pointer;
     margin: 0;
     padding: 0 6px;
+    transition: all 1s;
+    text-align: center;
 }
 
 .categori-card:hover,
@@ -129,12 +132,14 @@ body.dark {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    padding: 30px;
 }
 
 .menu-list-container {
     width: 100%;
     height: 90vh;
     margin-block: 3rem;
+    position: relative;
 }
 
 .menu-list,
@@ -145,8 +150,8 @@ body.dark {
 }
 
 .menu-list-container .menu-item {
-    padding: 10px 0;
-    height: 255;
+    padding: 15px 0;
+    height: 270;
     margin-block: 1rem;
     border-radius: 1rem;
     display: flex;
@@ -158,8 +163,17 @@ body.dark {
     margin-right: 0.5rem;
     width: 95%;
     direction: rtl;
+    position: relative;
 }
-
+.item-info{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(30px);
+    z-index: 10000;
+}
 .img-name,
 .price-order {
     width: 100%;
@@ -225,6 +239,8 @@ body.dark {
     color: ghostwhite;
     font-size: 20px;
     font-weight: 500;
+    align-self: self-end;
+    margin-top: 10px    ;
 }
 
 .old-price {
@@ -242,6 +258,11 @@ body.dark {
     align-self: flex-start;
     border-bottom: 1px solid white;
     padding-bottom: 5px;
+}
+
+.menu-title{
+    text-align: center;
+    text-shadow: 15px 15px 25PX  rgba(0, 0, 0, 0.579);
 }
 
 /*footer*/
