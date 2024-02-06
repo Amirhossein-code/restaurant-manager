@@ -6,6 +6,8 @@ services:
     restart: always
     volumes:
       - data:/var/lib/mysql
+    env_file:
+      - ./Backend/.env
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -20,19 +22,31 @@ services:
   
   backend:
     build: 
-      context: .
+      context: ./Backend
       dockerfile: Dockerfile
     container_name: api
     command: sh -c "python3 manage.py migrate --noinput && python manage.py makemessages -l fa && python manage.py compilemessages && python manage.py runserver 0.0.0.0:8000"
     restart: always
     volumes:
-      - .:/app
+      - ./Backend:/app
     ports:
       - "8000:8000"
     env_file:
-      - .env
+      - ./Backend/.env
     depends_on:
       db:
         condition: service_healthy
+
+  frontend:
+    build: 
+      context: ./Frontend
+      dockerfile: Dockerfile  
+    container_name: frontend
+    restart: always
+    ports:
+      - "3321:80"  
+    depends_on:
+      - backend  
+
 volumes:
   data:
