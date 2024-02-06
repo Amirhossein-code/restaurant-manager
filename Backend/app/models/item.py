@@ -44,4 +44,4 @@ class Item(models.Model):
         super().save(*args, **kwargs)
 
     class Meta:
-        verbose_name_plural = "Items"
+        verbose_name_plural = "آیتم ها"

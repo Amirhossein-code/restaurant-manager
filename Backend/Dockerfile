@@ -5,6 +5,9 @@ FROM python:3.10
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+# Install gettext
+RUN apt-get update && apt-get install -y gettext
+
 # Set the working directory
 WORKDIR /app
 

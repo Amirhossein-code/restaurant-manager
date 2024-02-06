@@ -117,3 +117,13 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("JWT",),
     "ACCESS_TOKEN_LIFETIME": timedelta(days=10),
 }
+USE_I18N = True
+
+LANGUAGE_CODE = "fa"
+
+LANGUAGES = [
+    ("fa", "Persian"),
+    ("en", "English"),
+]
+
+LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]

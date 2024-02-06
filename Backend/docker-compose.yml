@@ -23,7 +23,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: api
-    command: sh -c "python3 manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
+    command: sh -c "python3 manage.py migrate --noinput && python manage.py makemessages -l fa && python manage.py compilemessages && python manage.py runserver 0.0.0.0:8000"
     restart: always
     volumes:
       - .:/app
