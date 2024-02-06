@@ -24,6 +24,7 @@ docker-compose up --build
 
 ```
 docker-compose up -d
+
 ```
 
 This command will build your Docker containers according to the specifications in the `docker-compose.yml` file and start your application.

@@ -23,6 +23,23 @@ var swiper = new Swiper(".swiper", {
   },
 });
 
+var swiper = new Swiper(".tab-mode .swiper", {
+  slidesPerView: 8,
+  spaceBetween: -10,
+  loop: true,
+  centerSlide: 'true',
+  fade: 'true',
+  gragCursor: 'true',
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 
 //valriables we use in show menu part
 const categori = document.getElementsByClassName("swiper-slide"),
