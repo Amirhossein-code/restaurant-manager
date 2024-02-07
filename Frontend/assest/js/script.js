@@ -6,25 +6,7 @@ new WOW().init();
 
 //swiper library init
 var swiper = new Swiper(".swiper", {
-  slidesPerView: 4,
-  spaceBetween: -10,
-  loop: true,
-  centerSlide: 'true',
-  fade: 'true',
-  gragCursor: 'true',
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    dynamicBullets: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-var swiper = new Swiper(".tab-mode .swiper", {
-  slidesPerView: 8,
+  slidesPerView: 4.5,
   spaceBetween: -10,
   loop: true,
   centerSlide: 'true',
@@ -75,15 +57,16 @@ window.addEventListener('load', function () {
   fisrtEnterAnime();
 })
 
+
 function categoriEvvents(event) {
   showMenu(event);
 }
 
 function fisrtEnterAnime() {
-   for (let a = 0; a < menuListesContainer.length; a++) {
-     menuListesContainer[a]["children"][0].classList.remove("animated");
-     menuListesContainer[a]["children"][0].classList.add("animated");
-   }
+  for (let a = 0; a < menuListesContainer.length; a++) {
+    menuListesContainer[a]["children"][0].classList.remove("animated");
+    menuListesContainer[a]["children"][0].classList.add("animated");
+  }
 
 }
 
