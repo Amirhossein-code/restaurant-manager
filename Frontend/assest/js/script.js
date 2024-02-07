@@ -1,8 +1,12 @@
+// wow library init
 new WOW().init();
 
+//
+// import 'animate.css';
 
+//swiper library init
 var swiper = new Swiper(".swiper", {
-  slidesPerView: 4,
+  slidesPerView: 4.5,
   spaceBetween: -10,
   loop: true,
   centerSlide: 'true',
@@ -19,75 +23,54 @@ var swiper = new Swiper(".swiper", {
   },
 });
 
-var $grid = $('.grid').isotope({
-  // options
-  itemSelector: '.grid-item',
-  layoutMode: 'fitRows'
-});
-
-$('.menu-list-container').on('click', '.menu-list', function () {
-  var filterValue = $(this).attr('data-filter');
-  $grid.isotope({ filter: filterValue });
-});
-
+//valriables we use in show menu part
 const categori = document.getElementsByClassName("swiper-slide"),
   menuListesobject = document.getElementsByClassName("menu-list"),
   menuListes = Object.keys(menuListesobject).map(function (key) {
     return menuListesobject[key]
   }),
-  menuListesContainer = document.getElementById("listContainer"),
+  menuListesContainer = document.getElementsByClassName("menu-list-container"),
   categoriCard = document.getElementsByClassName("categori-card"),
-  menuItems = document.getElementsByClassName("menu-item")
+  menuItems = document.getElementsByClassName("menu-item");
 
+//variables we use in getting info from backend and creat categoris and menus
+
+
+//  first enter things need to do -
+// every time site reaload or loaded this thing need to happend
 window.addEventListener('load', function () {
+  //set onclick event to all categoris
   for (let x = 0; x < categori.length; x++) {
     categori[x].setAttribute('onclick', 'categoriEvvents(event)')
   }
-  menuListesContainer["children"][0].style.display = 'flex'
-
-  for (let y = 1; y < menuListesContainer['children'].length; y++) {
-    menuListesContainer["children"][y].style.display = 'none';
+  //show first catgories menu items in the first view and enter of the page
+  for (let t = 0; t < menuListesContainer.length; t++) {
+    menuListesContainer[t]["children"][0].style.display = 'flex'
   }
   categoriCard[0].classList.add("active");
-  // fisrtEnterAnime();
-  giveAnime();
+  // none the displaye of the other menus
+  for (let w = 0; w < menuListesContainer.length; w++) {
+    for (let y = 1; y < menuListesContainer[w]['children'].length; y++) {
+      menuListesContainer[w]["children"][y].style.display = 'none';
+    }
+  }
+  fisrtEnterAnime();
 })
 
-function categoriEvvents(event){
+
+function categoriEvvents(event) {
   showMenu(event);
 }
 
-function giveAnime(){
-  console.log("vared tabe shod")
-  anime({
-    target : '.item-menu',
-    translateX : 150,
-    direction: 'reverse'
-  })
-}
-
-function fisrtEnterAnime(){ 
-  anime({
-    target : ' .burger .menu-item',
-    translateX : 150,
-    direction: 'reverse'
-  })
+function fisrtEnterAnime() {
+  for (let a = 0; a < menuListesContainer.length; a++) {
+    menuListesContainer[a]["children"][0].classList.remove("animated");
+    menuListesContainer[a]["children"][0].classList.add("animated");
+  }
 
 }
-// function enterBurger() {
-//   console.log("hi")
-//   anime({
-//     targets: '.menu-item',
-//     // translateX: 0,
-//     // opacity: 1,
-//     // rotate: '1turn',
-//     translateX : 250,
-//     direction: 'reverse',
-//     // duration: 1000,
-//     // loop: true
-//   });
-// }
 
+// show categoris exact menu by clicking on
 function showMenu(event) {
   let timesClick = localStorage.getItem('clicked');
   let isClick;
@@ -120,7 +103,7 @@ function showMenu(event) {
       break;
     case 'swiper-slide':
       target = selected.parentNode;
-      activeTarget = selected.classList;
+      activeTarget = selected;
       break;
     case 'swiper-wrapper':
       target = selected;
@@ -133,16 +116,23 @@ function showMenu(event) {
 
   //targert - > element.swiper-slide
   let targetValue = target.getAttribute('target-menu');
-  let targetMenu = document.getElementById(targetValue);
+  let targetMenu = document.getElementsByClassName(targetValue); // select menu list with especific id wich we need it and customer clicked on that menu
+  for (let t = 0; t < menuListesContainer.length; t++) {
+    for (let z = 0; z < menuListesContainer[t]["children"].length; z++) {
+      menuListesContainer[t]["children"][z].style.display = 'none'
 
-  for (let z = 0; z < menuListesContainer["children"].length; z++) {
-    menuListesContainer["children"][z].style.display = 'none'
+    }
   }
+  for (let w = 0; w < targetMenu.length; w++) {
+    targetMenu[w].style.display = 'flex'
+    targetMenu[w].classList.remove("animated");
+    targetMenu[w].classList.add("animated");
 
-  targetMenu.style.display = 'flex'
-  console.log(targetMenu.children[0])
+  }
 
   for (let q = 0; q < categoriCard.length; q++) {
     categoriCard[q].classList.remove("active");
   }
+  activeTarget.classList.add("active");
+  let animetarget = "#" + targetValue + " " + ".menu-item"
 }
