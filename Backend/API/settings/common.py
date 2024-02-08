@@ -138,4 +138,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",  # Backend using localhost
     "http://127.0.0.1:8000",  # Backend using 127.0.0.1
     "https://complexalmas.ir",  # Production domain
+    "127.0.0.1:5500/Frontend/index.html",
 ]
