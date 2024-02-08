@@ -131,7 +131,11 @@ LANGUAGES = [
 LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3321",
-    "http://localhost:5500",
-    "https://complexalmas.ir",
+    "http://localhost:3321",  # Docker frontend
+    "http://127.0.0.1:3321",  # Docker frontend using 127.0.0.1
+    "http://localhost:5500",  # Frontend development
+    "http://127.0.0.1:5500",  # Frontend development using 127.0.0.1
+    "http://localhost:8000",  # Backend using localhost
+    "http://127.0.0.1:8000",  # Backend using 127.0.0.1
+    "https://complexalmas.ir",  # Production domain
 ]
