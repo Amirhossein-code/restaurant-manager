@@ -18,6 +18,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "djoser",
     "django_filters",
+    "corsheaders",
     "debug_toolbar",
 ]
 
@@ -34,6 +35,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -127,3 +129,9 @@ LANGUAGES = [
 ]
 
 LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3321",
+    "http://localhost:5500",
+    "https://complexalmas.ir",
+]

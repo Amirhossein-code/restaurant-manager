@@ -15,6 +15,7 @@ mysql-connector-python = "*"
 django-debug-toolbar = "*"
 django-filter = "*"
 python-dotenv = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 model-bakery = "*"

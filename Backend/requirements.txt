@@ -5,8 +5,9 @@ cffi==1.16.0; platform_python_implementation != 'PyPy'
 charset-normalizer==3.3.2; python_full_version >= '3.7.0'
 cryptography==42.0.2; python_version >= '3.7'
 defusedxml==0.8.0rc2; python_version >= '3.6'
-django==5.0.1; python_version >= '3.10'
+django==5.0.2; python_version >= '3.10'
 django-autoslug==1.9.9
+django-cors-headers==4.3.1; python_version >= '3.8'
 django-debug-toolbar==4.3.0; python_version >= '3.8'
 django-filter==23.5; python_version >= '3.7'
 django-templated-mail==1.1.1
