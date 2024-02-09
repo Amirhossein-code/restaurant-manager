@@ -13,8 +13,6 @@ class ItemSerializer(serializers.ModelSerializer):
             "slug",
             "description",
             "image",
-            "created_at",
-            "last_update",
         ]
         read_only_fields = ["id", "slug"]
 
