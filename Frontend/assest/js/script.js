@@ -48,13 +48,10 @@ window.addEventListener('load', function () {
   themecontainer.addEventListener("click" , ()=>{
     themecontainer.classList.toggle("dark")
     let bodyTheme = this.document.body.getAttribute("theme")
-    console.log(bodyTheme)
     if (themecontainer.classList.contains("dark")){
-      console.log("hi");
       this.document.body.setAttribute("theme" , "dark")
     }
     else{
-      console.log("bye")
       this.document.body.setAttribute("theme" , "light")
       
     }
