@@ -1,3 +1,5 @@
+const baseUrl = 'http://127.0.0.1:8000'
+
 // wow library init
 new WOW().init();
 
@@ -7,7 +9,7 @@ new WOW().init();
 //swiper library init
 var swiper = new Swiper(".swiper", {
   slidesPerView: 4.5,
-  spaceBetween: -10,
+  spaceBetween: 10,
   loop: true,
   centerSlide: 'true',
   fade: 'true',
@@ -29,9 +31,13 @@ const categori = document.getElementsByClassName("swiper-slide"),
   menuListes = Object.keys(menuListesobject).map(function (key) {
     return menuListesobject[key]
   }),
-  menuListesContainer = document.getElementsByClassName("menu-list-container"),
+  menuListesContainer = document.getElementById("menu-list-container"),
   categoriCard = document.getElementsByClassName("categori-card"),
-  menuItems = document.getElementsByClassName("menu-item");
+  menuItems = document.getElementsByClassName("menu-item"),
+  themecontainer = document.getElementById("themeContainer"),
+  light_lamp = document.getElementById("light-lamp"),
+  dark_lamp = document.getElementById("dark-lamp")
+
 
 //variables we use in getting info from backend and creat categoris and menus
 
@@ -39,50 +45,40 @@ const categori = document.getElementsByClassName("swiper-slide"),
 //  first enter things need to do -
 // every time site reaload or loaded this thing need to happend
 window.addEventListener('load', function () {
+  themecontainer.addEventListener("click" , ()=>{
+    themecontainer.classList.toggle("dark")
+    let bodyTheme = this.document.body.getAttribute("theme")
+    console.log(bodyTheme)
+    if (themecontainer.classList.contains("dark")){
+      console.log("hi");
+      this.document.body.setAttribute("theme" , "dark")
+    }
+    else{
+      console.log("bye")
+      this.document.body.setAttribute("theme" , "light")
+      
+    }
+  })
   //set onclick event to all categoris
   for (let x = 0; x < categori.length; x++) {
-    categori[x].setAttribute('onclick', 'categoriEvvents(event)')
+    categori[x].setAttribute('onclick', 'showMenu(event)')
   }
   //show first catgories menu items in the first view and enter of the page
-  for (let t = 0; t < menuListesContainer.length; t++) {
-    menuListesContainer[t]["children"][0].style.display = 'flex'
-  }
+
+  menuListesContainer["children"][0].style.display = 'flex'
+
   categoriCard[0].classList.add("active");
   // none the displaye of the other menus
-  for (let w = 0; w < menuListesContainer.length; w++) {
-    for (let y = 1; y < menuListesContainer[w]['children'].length; y++) {
-      menuListesContainer[w]["children"][y].style.display = 'none';
-    }
+  for (let y = 1; y < menuListesContainer['children'].length; y++) {
+    menuListesContainer["children"][y].style.display = 'none';
   }
-  fisrtEnterAnime();
+  menuListesContainer["children"][0].classList.remove("animated");
+  menuListesContainer["children"][0].classList.add("animated");
 })
 
 
-function categoriEvvents(event) {
-  showMenu(event);
-}
-
-function fisrtEnterAnime() {
-  for (let a = 0; a < menuListesContainer.length; a++) {
-    menuListesContainer[a]["children"][0].classList.remove("animated");
-    menuListesContainer[a]["children"][0].classList.add("animated");
-  }
-
-}
-
 // show categoris exact menu by clicking on
 function showMenu(event) {
-  let timesClick = localStorage.getItem('clicked');
-  let isClick;
-
-  if (timesClick == null) {
-    localStorage.setItem('clicked', 'yes');
-    isClick = false
-  }
-  else if (timesClick == 'yes') {
-    isClick = true
-  }
-
   let selected = event.target;
   let selectedClassP = event.target.parentNode.classList[0]
   let target;
@@ -116,23 +112,132 @@ function showMenu(event) {
 
   //targert - > element.swiper-slide
   let targetValue = target.getAttribute('target-menu');
-  let targetMenu = document.getElementsByClassName(targetValue); // select menu list with especific id wich we need it and customer clicked on that menu
-  for (let t = 0; t < menuListesContainer.length; t++) {
-    for (let z = 0; z < menuListesContainer[t]["children"].length; z++) {
-      menuListesContainer[t]["children"][z].style.display = 'none'
-
-    }
-  }
-  for (let w = 0; w < targetMenu.length; w++) {
-    targetMenu[w].style.display = 'flex'
-    targetMenu[w].classList.remove("animated");
-    targetMenu[w].classList.add("animated");
+  let targetMenu = document.getElementById(targetValue); // select menu list with especific id wich we need it and customer clicked on that menu
+  for (let z = 0; z < menuListesContainer["children"].length; z++) {
+    menuListesContainer["children"][z].style.display = 'none'
 
   }
+
+  targetMenu.style.display = 'flex'
+  targetMenu.classList.remove("animated");
+  targetMenu.classList.add("animated");
+
+
 
   for (let q = 0; q < categoriCard.length; q++) {
     categoriCard[q].classList.remove("active");
   }
   activeTarget.classList.add("active");
   let animetarget = "#" + targetValue + " " + ".menu-item"
+}
+
+
+
+//======= get data from db and set it to the page
+
+
+// url
+const itemApi = `${baseUrl}/app/items/`,
+  categoriApi = `${baseUrl}/app/categories/`;
+
+const swiperWrapper = document.getElementById("swiper-wrapper"),
+  menuListContainer = document.getElementById("menu-list-container")
+
+fetch(categoriApi).then((res) => {
+  var categoriData = res.json();
+  categoriData.then(result => {
+    createCategori(result.results);
+  })
+});
+
+function createCategori(data) {
+  data.forEach(categoriElement => {
+    var categoriId = categoriElement.id
+    var categorititle = categoriElement.title;
+    var categoriSlug = categoriElement.slug;
+    var categoriImg = categoriElement.image;
+    var swiperTarget = categoriSlug;
+    //create div.swiper-silde and appenchild it to div.swiper-wrapper
+    const swiper_slide = document.createElement("div");
+    swiper_slide.classList.add("swiper-slide");
+    swiper_slide.setAttribute("target-menu", categoriSlug);
+    swiperWrapper.appendChild(swiper_slide);
+    swiper_slide.innerHTML = `
+        <div class="categori-card">
+             <div class="categori-icon">
+                <img src= ${categoriImg} alt>
+            </div>
+            <div class="categori-name">
+                <span> ${categorititle} </span>
+            </div>
+        </div>
+        `;
+    //create menu list for each categori
+    const menuList = document.createElement("div");
+    menuList.id = `${categoriSlug}`;
+    menuList.classList.add(`${categoriSlug}`);
+    menuList.className = "menu-list row justify-content-md-between w-100 mx-1";
+    menuListContainer.appendChild(menuList)
+    //create menu-title div for each menu list
+    const menuTitle = document.createElement("div");
+    menuTitle.classList.add("menu-title");
+    menuTitle.innerHTML = `
+            <span class="title-line left-line"></span>
+                <h1 class>${categorititle}</h1>
+            <span class="title-line right-line"></span>
+        `;
+    menuList.appendChild(menuTitle)
+    const thatItemUrl = `${baseUrl}/app/items/?title=&category=${categoriId}&category__title__icontains=`
+    fetch(`${thatItemUrl}`).then((res) => {
+      var categoriItems = res.json();
+      categoriItems.then(result => {
+        var categoriItemsRes = result.results
+        getItems(categoriItemsRes, categoriSlug);
+      })
+    })
+  });
+}
+function getItems(items, slug) {
+  // const parentMenulist = document.getElementById(`slug`)
+  for (var x = 0; x < items.length; x++) {
+    // console.log(items[x])
+    //get item' data from db
+    var itemtitle = items[x].title,
+      itemSlug = items[x].slug,
+      itemDescriptin = items[x].description,
+      itemId = items[x].id,
+      itemImage = items[x].image,
+      itemPrice = items[x].unit_price;
+    //create menu item div and children item
+    const menuItem = document.createElement("div")
+    menuItem.className = "menu-item row"
+    menuItem.innerHTML = `
+            <div class="-12 img-name row">
+                <div class="col-5 item-img">
+                    <img src=${itemImage} alt>
+                </div>
+                <div class="col-7 item-name">
+                    <h2 class="product-name">
+                        ${itemtitle}
+                    </h2>
+                    <span class="product-caption">
+                        ${itemDescriptin}
+                    </span>
+                </div>
+            </div>
+            <div class="-12 price-order row">
+                <div class="col-5 item-order">
+                    <button class="order-btn">
+                        جزئیات
+                    </button>
+                </div>
+                <div class="col-7 item-price">
+                    <span class="new-price">${itemPrice} </span>
+                    <span class="currency">تومان</span>
+                </div>
+             </div>
+        `;
+    const targetMenulist = document.getElementById(`${slug}`)
+    targetMenulist.appendChild(menuItem)
+  }
 }
