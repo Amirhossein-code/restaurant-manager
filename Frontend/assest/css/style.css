@@ -16,7 +16,7 @@
     --dark-front-clr--: #0b1d35;
     --line-color-: darkgrey;
     --font-color-: #0b1d35;
-    --shadow-color-:#11182776;
+    --shadow-color-: #11182776;
     --box-shadow-inset-button: inset 0 2px 7px -9px rgba(255, 255, 255, .5),
         inset 0 1px 2px -1px rgba(255, 255, 255, 1),
         inset 0 -20px 16px -32px rgba(96, 68, 144, .3),
@@ -24,7 +24,36 @@
         inset 0 1px 4px rgba(154, 146, 210, .3),
         inset 0 1px 10px rgba(227, 222, 255, .2);
     --filter-blur: blur(100px);
+    --neon-color-: #f5f5f5;
+    --neon-font-color: #0b1d35cc;
+    /* --neon-color-: rgba(80, 131, 232, 0.547); */
+    --neon-shadow-: 0 0 4px #0b1d35cc,
+        0 0 11px #0b1d35cc,
+        0 0 19px #0b1d35cc,
+        0 0 40px #f5f5f5,
+        0 0 80px #f5f5f5,
+        0 0 90px #f5f5f5,
+        0 0 100px #f5f5f5,
+        0 0 150px #f5f5f5;
 
+
+}
+
+:root [theme=dark] {
+    --bg-color-: #111827;
+    --front-color-: #0b1d35;
+    --font-color-: ghostwhite;
+    --neon-font-color-: ghostwhite;
+    --shadow-color-: #f5f5f570;
+    --neon-color-: #0b1d35;
+    --neon-shadow-: 0 0 4px ghostwhite,
+        0 0 11px ghostwhite,
+        0 0 19px ghostwhite,
+        0 0 40px #0b1d35,
+        0 0 80px #0b1d35,
+        0 0 90px #0b1d35,
+        0 0 100px #0b1d35,
+        0 0 150px #0b1d35;
 }
 
 body.body#body {
@@ -35,14 +64,10 @@ body.body#body {
     position: relative;
     color: var(--font-color-);
     transition: all 0.3s;
+    position: relative;
 }
 
-:root [theme=dark] {
-    --bg-color-: #111827;
-    --front-color-: #0b1d35;
-    --font-color-: ghostwhite;
-    --shadow-color-: #f5f5f570;
-}
+
 
 .menu-body {
     width: 100%;
@@ -97,20 +122,121 @@ body.body#body {
     color: wheat;
 }
 
-.nav#navbar{
-    width: 100%;
+/*navbar*/
+.nav#navbar {
+    width: 95%;
     height: 10vh;
     /* background: var(--bg-color-); */
     background-color: var(--bg-color-);
-    border-radius: 0 0 2rem 2rem;
-    margin-top: 0;
+    border-radius: 2rem 0 2.5rem 0rem;
+    margin-top: 10px;
+    margin-inline: auto;
     padding-top: 0;
-    box-shadow: 0.5px 0.5px  10px var(--shadow-color-);
+    box-shadow: 0.5px 0.5px 10px var(--shadow-color-);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--font-color-);
+
 }
+
+.nav#navbar .menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-inline-end: 0.5rem;
+    margin: auto 0.5rem;
+}
+
+.menu-li {
+    list-style: none;
+    margin-inline: 5px;
+    position: relative;
+}
+
+.menu-li::after {
+    content: '';
+    transition: all 0.5s;
+    background: var(--font-color-);
+    width: 0;
+    height: 2px;
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+.menu-li:hover::after {
+    width: 100%;
+}
+
+.menu-link {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+.brand-name {
+    margin-inline: 1rem;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#mobile-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    position: fixed;
+    background-color: hsla(230, 75%, 15%, .1);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    text-align: center;
+}
+
+#mobile-nav .brand-name {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-block: 5rem;
+}
+
+#mobile-menu {
+    font-size: 1.2em;
+}
+
+#mobile-menu .menu-li {
+    margin-block: 0.5rem;
+    padding: 1rem;
+}
+
+#close-menu {
+    font-size: 2em;
+    margin-top: 5rem;
+    cursor: pointer;
+}
+
+#menu-icon {
+    font-size: 1.5em;
+    margin: 0.5rem;
+}
+
+i {
+    cursor: pointer;
+}
+
+/*header*/
 
 .header {
     width: 90%;
-    height: 12vh;
+    height: 15vh;
     margin-bottom: 3rem;
     margin: 1rem auto;
     border-radius: 1rem;
@@ -121,32 +247,34 @@ body.body#body {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    
+    padding: 20px;
+    border-radius: 1rem;
+
 }
 
-.header-title{
+.header-title {
     font-weight: bold;
     font-size: 3rem;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-text-stroke: 0.05rem  var(--font-color-);
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.26);
+    -webkit-text-stroke: 0.05rem var(--font-color-);
     color: transparent;
     font-family: 'Bhaijaan';
     height: 49%;
-    
+    animation: flicker 1.5s infinite alternate;
 }
-.header-subtitle{
-    height: 49% ;
+
+.header-subtitle {
+    height: 49%;
     font-size: 2rem;
     font-weight: bold;
     color: var(--font-color-);
     width: 100%;
     text-align: center;
     font-family: 'Playfair';
-    display: block;
+    display: inline-block;
 }
 
 
@@ -395,6 +523,8 @@ body.body#body {
     margin-left: 10px;
 }
 
+
+
 /*responsive*/
 @media screen and (max-width: 400px) {
     .categori-card {
@@ -405,7 +535,12 @@ body.body#body {
         width: 100%;
         height: auto;
     }
-    .nav#navbar{
+
+    .nav#navbar {
+        display: none;
+    }
+
+    #mobile-nav {
         display: none;
     }
 }
@@ -426,7 +561,12 @@ body.body#body {
         height: 100%;
         margin-inline: 2px;
     }
-    .nav#navbar{
+
+    .nav#navbar {
+        display: none;
+    }
+
+    #mobile-nav {
         display: none;
     }
 }
@@ -445,8 +585,13 @@ body.body#body {
     .categori-card {
         width: 60%;
     }
-    .nav#navbar{
-        display: flex;
+
+    .nav#navbar {
+        display: none;
+    }
+
+    #mobile-nav {
+        display: none;
     }
 }
 
@@ -470,9 +615,19 @@ body.body#body {
     .header {
         width: 60%;
     }
-    .nav#navbar{
+
+    .nav#navbar {
         display: flex;
     }
+
+    #close-menu {
+        display: none;
+    }
+
+    #menu-icon {
+        display: none;
+    }
+
 }
 
 @media screen and (min-width:1200px) {
@@ -492,17 +647,23 @@ body.body#body {
     .header {
         width: 55%;
     }
-    .nav#navbar{
+
+    .nav#navbar {
         display: flex;
     }
+
+    #close-menu {
+        display: none;
+    }
+
+    #menu-icon {
+        display: none;
+    }
+
 }
 
-/*footer*/
 
-
-
-
-
+/*animation*/
 .animated {
 
     animation: showAnime forwards ease-in;
@@ -525,5 +686,18 @@ body.body#body {
         transform: translateX(0) translateY(0) rotate(0);
         opacity: 1;
 
+    }
+}
+
+@keyframes flicker {
+
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+        text-shadow: var(--neon-shadow-)
+
+    }
+
+    20%, 24%, 55% {
+        text-shadow: none;
     }
 }
