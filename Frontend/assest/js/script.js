@@ -25,7 +25,7 @@ var swiper = new Swiper(".swiper", {
   },
 });
 
-//valriables we use in show menu part
+//valriables we use i
 const categori = document.getElementsByClassName("swiper-slide"),
   menuListesobject = document.getElementsByClassName("menu-list"),
   menuListes = Object.keys(menuListesobject).map(function (key) {
@@ -36,24 +36,33 @@ const categori = document.getElementsByClassName("swiper-slide"),
   menuItems = document.getElementsByClassName("menu-item"),
   themecontainer = document.getElementById("themeContainer"),
   light_lamp = document.getElementById("light-lamp"),
-  dark_lamp = document.getElementById("dark-lamp")
+  dark_lamp = document.getElementById("dark-lamp"),
+  menuIcon = document.getElementById("menu-icon"),
+  menuclose = document.getElementById("close-menu"),
+  nav = document.getElementById("mobile-nav"),
+  menu = document.getElementById("mobile-menu")
 
-
-//variables we use in getting info from backend and creat categoris and menus
+//navbar 
+menuIcon.addEventListener("click", () => {
+  nav.style.display = "flex"
+})
+menuclose.addEventListener("click" , ()=>{
+  nav.style.display="none"
+})
 
 
 //  first enter things need to do -
 // every time site reaload or loaded this thing need to happend
 window.addEventListener('load', function () {
-  themecontainer.addEventListener("click" , ()=>{
+  themecontainer.addEventListener("click", () => {
     themecontainer.classList.toggle("dark")
     let bodyTheme = this.document.body.getAttribute("theme")
-    if (themecontainer.classList.contains("dark")){
-      this.document.body.setAttribute("theme" , "dark")
+    if (themecontainer.classList.contains("dark")) {
+      this.document.body.setAttribute("theme", "dark")
     }
-    else{
-      this.document.body.setAttribute("theme" , "light")
-      
+    else {
+      this.document.body.setAttribute("theme", "light")
+
     }
   })
   //set onclick event to all categoris
