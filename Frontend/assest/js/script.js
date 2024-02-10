@@ -37,18 +37,18 @@ const categori = document.getElementsByClassName("swiper-slide"),
   themecontainer = document.getElementById("themeContainer"),
   light_lamp = document.getElementById("light-lamp"),
   dark_lamp = document.getElementById("dark-lamp"),
-  menuIcon = document.getElementById("menu-icon"),
-  menuclose = document.getElementById("close-menu"),
+  // menuIcon = document.getElementById("menu-icon"),
+  // menuclose = document.getElementById("close-menu"),
   nav = document.getElementById("mobile-nav"),
   menu = document.getElementById("mobile-menu")
 
 //navbar 
-menuIcon.addEventListener("click", () => {
-  nav.style.display = "flex"
-})
-menuclose.addEventListener("click" , ()=>{
-  nav.style.display="none"
-})
+// menuIcon.addEventListener("click", () => {
+//   nav.style.display = "flex"
+// })
+// menuclose.addEventListener("click" , ()=>{
+//   nav.style.display="none"
+// })
 
 
 //  first enter things need to do -
