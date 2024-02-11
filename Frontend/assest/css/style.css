@@ -3,7 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&family=Marhey&family=Nunito:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Pacifico&display=swap');
-
+@font-face {
+    font-family: 'shabnam';
+    src: url('../fonts/Shabnam.ttf') format("truetype");
+}
 :root {
     --green-background-: #489854;
     --grey-background-: #F4F4F4;
@@ -65,6 +68,7 @@ body.body#body {
     color: var(--font-color-);
     transition: all 0.3s;
     position: relative;
+    font-family: 'shabnam';
 }
 
 
@@ -442,6 +446,9 @@ i {
     flex-direction: column;
     justify-content: space-around;
     align-items: right;
+}
+.product-caption{
+
 }
 
 .price-order {
