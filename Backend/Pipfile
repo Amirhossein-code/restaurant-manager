@@ -16,6 +16,8 @@ django-debug-toolbar = "*"
 django-filter = "*"
 python-dotenv = "*"
 django-cors-headers = "*"
+whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 model-bakery = "*"

@@ -1,4 +1,4 @@
-base on system 
+home Page 
 http://127.0.0.1:8000
 
 django-admin endpoint
