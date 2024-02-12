@@ -4,7 +4,12 @@ from common.utils import custom_slugify
 
 
 class Category(AbstractCategory):
-    image = models.ImageField(upload_to="category_images/", null=True, blank=True)
+    image = models.ImageField(
+        upload_to="category_images/",
+        null=True,
+        blank=True,
+        verbose_name="عکس",
+    )
 
     def save(self, *args, **kwargs):
         if self.pk is not None:

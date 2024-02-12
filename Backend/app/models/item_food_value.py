@@ -8,9 +8,18 @@ class ItemFoodValue(models.Model):
         Carbohidrates , Protein , ...
     """
 
-    title = models.CharField(max_length=255)
-    value = models.PositiveIntegerField()
-    unit = models.CharField(max_length=30, default="گرم")
+    title = models.CharField(
+        max_length=255,
+        verbose_name="نام",
+    )
+    value = models.PositiveIntegerField(
+        verbose_name="ارزش",
+    )
+    unit = models.CharField(
+        max_length=30,
+        default="گرم",
+        verbose_name="واحد",
+    )
     item = models.ForeignKey(
         Item, on_delete=models.CASCADE, related_name="item_food_values"
     )
@@ -19,4 +28,4 @@ class ItemFoodValue(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = "Item Food Values"
+        verbose_name_plural = "ارزش های غذایی"

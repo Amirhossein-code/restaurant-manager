@@ -7,9 +7,18 @@ class ItemIngredient(models.Model):
     Ingredients
     """
 
-    title = models.CharField(max_length=255)
-    weight = models.PositiveIntegerField()
-    unit = models.CharField(max_length=30, default="گرم")
+    title = models.CharField(
+        max_length=255,
+        verbose_name="نام",
+    )
+    weight = models.PositiveIntegerField(
+        verbose_name="وزن",
+    )
+    unit = models.CharField(
+        max_length=30,
+        default="گرم",
+        verbose_name="واحد",
+    )
     item = models.ForeignKey(
         Item, on_delete=models.CASCADE, related_name="item_ingredients"
     )
@@ -18,4 +27,4 @@ class ItemIngredient(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = "Item Ingredients"
+        verbose_name_plural = "مواد غذایی"
