@@ -21,3 +21,4 @@ class Category(AbstractCategory):
 
     class Meta:
         verbose_name_plural = "طبقه بندی ها"
+        verbose_name = "طبقه بندی"

@@ -28,3 +28,4 @@ class ItemIngredient(models.Model):
 
     class Meta:
         verbose_name_plural = "مواد غذایی"
+        verbose_name = "ماده غذایی"

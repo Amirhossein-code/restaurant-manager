@@ -29,3 +29,4 @@ class ItemFoodValue(models.Model):
 
     class Meta:
         verbose_name_plural = "ارزش های غذایی"
+        verbose_name = "ارزش غذایی"
