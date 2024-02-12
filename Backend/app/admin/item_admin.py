@@ -22,6 +22,7 @@ class ItemAdmin(admin.ModelAdmin):
         "category",
         "slug",
         "last_update",
+        "available",
     ]
     search_fields = [
         "title",
@@ -31,6 +32,7 @@ class ItemAdmin(admin.ModelAdmin):
         "category",
         "created_at",
         "last_update",
+        "available",
     ]
     fields = [
         "title",
@@ -39,6 +41,7 @@ class ItemAdmin(admin.ModelAdmin):
         "description",
         "image",
         "category",
+        "available",
         "created_at",
         "last_update",
     ]

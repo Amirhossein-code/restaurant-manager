@@ -11,6 +11,7 @@ class ItemSerializer(serializers.ModelSerializer):
             "unit_price",
             "category",
             "slug",
+            "available",
             "description",
             "image",
         ]
