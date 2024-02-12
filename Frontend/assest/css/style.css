@@ -3,10 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&family=Marhey&family=Nunito:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Pacifico&display=swap');
+
 @font-face {
     font-family: 'shabnam';
     src: url('../fonts/Shabnam.ttf') format("truetype");
 }
+
 :root {
     --green-background-: #489854;
     --grey-background-: #F4F4F4;
@@ -126,6 +128,150 @@ body.body#body {
     color: wheat;
 }
 
+/*preloader*/
+
+.preload {
+    /* background-color: #111827; */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+}
+
+@keyframes ldio-eopbhvtcszn {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+.ldio-eopbhvtcszn div {
+    left: 37.43px;
+    top: 16.745px;
+    position: absolute;
+    animation: ldio-eopbhvtcszn linear 1s infinite;
+    background: #591224;
+    width: 122.14px;
+    height: 9.85px;
+    border-radius: 61.07px / 4.925px;
+    transform-origin: 61.07px 81.755px;
+}
+
+.ldio-eopbhvtcszn div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -0.9285714285714286s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(2) {
+    transform: rotate(25.714285714285715deg);
+    animation-delay: -0.8571428571428571s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(3) {
+    transform: rotate(51.42857142857143deg);
+    animation-delay: -0.7857142857142857s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(4) {
+    transform: rotate(77.14285714285714deg);
+    animation-delay: -0.7142857142857143s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(5) {
+    transform: rotate(102.85714285714286deg);
+    animation-delay: -0.6428571428571429s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(6) {
+    transform: rotate(128.57142857142858deg);
+    animation-delay: -0.5714285714285714s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(7) {
+    transform: rotate(154.28571428571428deg);
+    animation-delay: -0.5s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(8) {
+    transform: rotate(180deg);
+    animation-delay: -0.42857142857142855s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(9) {
+    transform: rotate(205.71428571428572deg);
+    animation-delay: -0.35714285714285715s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(10) {
+    transform: rotate(231.42857142857142deg);
+    animation-delay: -0.2857142857142857s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(11) {
+    transform: rotate(257.14285714285717deg);
+    animation-delay: -0.21428571428571427s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(12) {
+    transform: rotate(282.85714285714283deg);
+    animation-delay: -0.14285714285714285s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(13) {
+    transform: rotate(308.57142857142856deg);
+    animation-delay: -0.07142857142857142s;
+    background: #591224;
+}
+
+.ldio-eopbhvtcszn div:nth-child(14) {
+    transform: rotate(334.2857142857143deg);
+    animation-delay: 0s;
+    background: #591224;
+}
+
+.loadingio-spinner-spinner-55gz0g8ky3g {
+    width: 197px;
+    height: 197px;
+    display: inline-block;
+    overflow: hidden;
+    background: none;
+}
+
+.ldio-eopbhvtcszn {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    /* see note above */
+}
+
+.ldio-eopbhvtcszn div {
+    box-sizing: content-box;
+}
+
 /*navbar*/
 .nav#navbar {
     width: 95%;
@@ -188,30 +334,6 @@ body.body#body {
     font-size: 2em;
 }
 
-#mobile-nav {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    position: fixed;
-    background-color: hsla(230, 75%, 15%, .1);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    text-align: center;
-}
-
-#mobile-nav .brand-name {
-    display: block;
-    text-align: center;
-    width: 100%;
-    margin-block: 5rem;
-}
-
 #mobile-menu {
     font-size: 1.2em;
 }
@@ -244,7 +366,6 @@ i {
     margin-bottom: 3rem;
     margin: 1rem auto;
     border-radius: 1rem;
-    z-index: 3;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -392,15 +513,7 @@ i {
     transition: background .2s;
 }
 
-.item-info {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(30px);
-    z-index: 10000;
-}
+
 
 .img-name,
 .price-order {
@@ -447,9 +560,8 @@ i {
     justify-content: space-around;
     align-items: right;
 }
-.product-caption{
 
-}
+.product-caption {}
 
 .price-order {
     width: 100%;
@@ -552,7 +664,7 @@ i {
     bottom: 0.001;
     left: 0;
     right: 0;
-    z-index: 100;
+    transition: 0.3s;
 }
 
 .footer_header,
@@ -562,21 +674,25 @@ i {
     width: 100%;
     margin-block: 0;
 }
+
 .footer_header,
-.footer_body{
+.footer_body {
     height: 40%;
 }
-.footer_body{
+
+.footer_body {
     justify-content: space-between;
     align-items: center;
     /* margin-inline: 20px; */
 }
-.footer_footer{
+
+.footer_footer {
     height: 10%;
     font-size: 0.7em;
     justify-content: space-between;
     margin-inline: 5px;
 }
+
 .footer_logo {
     width: 50%;
     height: 100%;
@@ -599,7 +715,8 @@ i {
     text-align: right;
     direction: rtl;
 }
-.footer_number{
+
+.footer_number {
     direction: ltr;
     display: flex;
     align-items: center;
@@ -609,20 +726,24 @@ i {
     padding: 20px;
     border-radius: 1rem;
 }
-.footer_number span{
+
+.footer_number span {
     margin-inline-start: 15px;
 }
-a.instagram-link{
+
+a.instagram-link {
     color: rgb(79, 0, 128);
     font-size: 1.5em;
     margin-inline-end: 1rem;
     border-left: 1px solid ghostwhite;
     padding-inline: 20px;
 }
-.footer a{
+
+.footer a {
     color: ghostwhite;
     text-transform: uppercase;
 }
+
 /*responsive*/
 @media screen and (max-width: 400px) {
     .categori-card {
@@ -725,6 +846,7 @@ a.instagram-link{
     #menu-icon {
         display: none;
     }
+
     .footer_logo img {
         width: 50%;
         height: auto;
@@ -760,6 +882,7 @@ a.instagram-link{
     #menu-icon {
         display: none;
     }
+
     .footer_logo img {
         width: 50%;
         height: 100%;

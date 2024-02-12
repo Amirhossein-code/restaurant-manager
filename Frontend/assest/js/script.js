@@ -40,7 +40,8 @@ const categori = document.getElementsByClassName("swiper-slide"),
   // menuIcon = document.getElementById("menu-icon"),
   // menuclose = document.getElementById("close-menu"),
   nav = document.getElementById("mobile-nav"),
-  menu = document.getElementById("mobile-menu")
+  menu = document.getElementById("mobile-menu"),
+  preload = document.getElementById("preload")
 
 //navbar 
 // menuIcon.addEventListener("click", () => {
@@ -54,6 +55,7 @@ const categori = document.getElementsByClassName("swiper-slide"),
 //  first enter things need to do -
 // every time site reaload or loaded this thing need to happend
 window.addEventListener('load', function () {
+  preload.style.display = 'none';
   themecontainer.addEventListener("click", () => {
     themecontainer.classList.toggle("dark")
     let bodyTheme = this.document.body.getAttribute("theme")
