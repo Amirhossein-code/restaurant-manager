@@ -5,12 +5,14 @@
 Create a `.env` file in the same directory as `manage.py` and add the following credentials(You can enter anything):
 
 ```
-MYSQL_ROOT_PASSWORD=
+SECRET_KEY=e-lc=kbd1)oiyo$qk63_^70n^y-k1z3gwzzli+@ue%!)qza$71
+DJANGO_SETTINGS_FILE=API.settings.docker
+MYSQL_ROOT_PASSWORD=Example@Pass344
 MYSQL_DATABASE=restaurant
-MYSQL_USER=
-MYSQL_PASSWORD=
-
+MYSQL_USER=admin
+MYSQL_PASSWORD=123KLP896@!Mopen
 DB_PORT=3306
+DB_HOST=db
 DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
 ```
 
@@ -19,8 +21,10 @@ DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
 Run the following command to build and run Docker containers:
 
 ```
-docker-compose up --build 
+docker-compose up --build
 ```
+
+if the container has been build run this to run the application
 
 ```
 docker-compose up -d
