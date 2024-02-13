@@ -1,10 +1,13 @@
 from .common import *
+from dotenv import load_dotenv
+
+load_dotenv()
 
 SECRET_KEY = os.environ["SECRET_KEY"]
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["complexalmas.ir"]
+ALLOWED_HOSTS = ["restaurant.complexalmas.ir"]
 
 DATABASES = {
     "default": {
@@ -12,7 +15,7 @@ DATABASES = {
         "NAME": os.environ["DB_NAME"],
         "USER": os.environ["DB_USER"],
         "PASSWORD": os.environ["DB_PASSWORD"],
-        "HOST": os.environ["DB_HOST_LOCAL"],
-        "PORT": os.environ["DB_PORT_LOCAL"],
+        "HOST": os.environ["DB_HOST"],
+        "PORT": os.environ["DB_PORT"],
     }
 }
