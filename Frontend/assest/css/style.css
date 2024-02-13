@@ -743,7 +743,9 @@ a.instagram-link {
     color: ghostwhite;
     text-transform: uppercase;
 }
-
+.footer i {
+    color: ghostwhite;
+}
 
 /*items info*/
 .info-container {
