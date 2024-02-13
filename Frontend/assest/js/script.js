@@ -37,20 +37,18 @@ const categori = document.getElementsByClassName("swiper-slide"),
   themecontainer = document.getElementById("themeContainer"),
   light_lamp = document.getElementById("light-lamp"),
   dark_lamp = document.getElementById("dark-lamp"),
-  // menuIcon = document.getElementById("menu-icon"),
-  // menuclose = document.getElementById("close-menu"),
   nav = document.getElementById("mobile-nav"),
   menu = document.getElementById("mobile-menu"),
-  preload = document.getElementById("preload")
-
-//navbar 
-// menuIcon.addEventListener("click", () => {
-//   nav.style.display = "flex"
-// })
-// menuclose.addEventListener("click" , ()=>{
-//   nav.style.display="none"
-// })
-
+  preload = document.getElementById("preload"),
+  info = document.getElementById("infoContainer"),
+  ingradient = document.getElementById("ingradientTable"),
+  foodValue = document.getElementById("foodValueTable"),
+  colseInfo = document.getElementById("colseInfo"),
+  orderBtns = document.getElementsByClassName("order-btn"),
+  ingTable = document.getElementById("ingradientTable"),
+  fdTable = document.getElementById("foodValueTable"),
+  infoContainer = document.getElementById("infoContainer"),
+  closeLink = document.getElementById("closeLink")
 
 //  first enter things need to do -
 // every time site reaload or loaded this thing need to happend
@@ -84,6 +82,68 @@ window.addEventListener('load', function () {
   menuListesContainer["children"][0].classList.add("animated");
 })
 
+infoContainer.addEventListener("click" , () => {
+  closeInfoC()
+})
+
+function closeInfoC() {
+  console.log("close")
+  infoContainer.style.display = 'none'
+}
+function selectInfo(event) {
+  fdTable.innerHTML = ''
+  ingTable.innerHTML = ''
+  infoContainer.style.display = 'flex'
+  infoContainer.style.width='100%'
+  const targetItemTitle = event.target.parentNode.parentNode.parentNode.firstElementChild.lastElementChild.firstElementChild.innerHTML
+  fetch(`${baseUrl}/app/items/?title=${targetItemTitle}&category=&category__title__icontains=`)
+    .then(respon => {
+      const item = respon.json()
+      item.then((data) => {
+        const targetItemSlug = data.results[0].slug
+        showInfo(targetItemSlug);
+      })
+    })
+}
+
+function showInfo(slug) {
+  const ingUrl = `${baseUrl}/app/items/${slug}/ingredients/`
+  const fdUrl = `${baseUrl}/app/items/${slug}/food-values/`
+  ingShow(ingUrl);
+  fdShow(fdUrl);
+}
+
+function ingShow(url) {
+  fetch(url).then(respon => {
+    const ing = respon.json()
+    ing.then((datas) => {
+      datas.forEach((data) => {
+        const tr = document.createElement("tr")
+        tr.innerHTML = `
+          <td> ${data.title} </td>
+          <td> ${data.weight}  ${data.unit} </td>
+        `
+        ingTable.appendChild(tr)
+      })
+    })
+  })
+}
+
+function fdShow(url) {
+  fetch(url).then(respon => {
+    const fd = respon.json()
+    fd.then((datas) => {
+      datas.forEach((data) => {
+        const tr = document.createElement("tr")
+        tr.innerHTML = `
+          <td> ${data.title} </td>
+          <td> ${data.value}  ${data.unit} </td>
+        `
+        fdTable.appendChild(tr)
+      })
+    })
+  })
+}
 
 // show categoris exact menu by clicking on
 function showMenu(event) {
@@ -215,11 +275,41 @@ function getItems(items, slug) {
       itemDescriptin = items[x].description,
       itemId = items[x].id,
       itemImage = items[x].image,
-      itemPrice = items[x].unit_price;
+      itemPrice = items[x].unit_price,
+      itemAvailble = items[x].available;
     //create menu item div and children item
     const menuItem = document.createElement("div")
     menuItem.className = "menu-item row"
-    menuItem.innerHTML = `
+    if (itemAvailble = 'YES') {
+      menuItem.innerHTML = `
+      <div class="-12 img-name row">
+          <div class="col-5 item-img">
+              <img src=${itemImage} alt>
+          </div>
+          <div class="col-7 item-name">
+              <h2 class="product-name">
+                  ${itemtitle}
+              </h2>
+              <span class="product-caption">
+                  ${itemDescriptin}
+              </span>
+          </div>
+      </div>
+      <div class="-12 price-order row">
+          <div class="col-5 item-order">
+              <button onclick="selectInfo(event)" class="order-btn">
+                  جزئیات
+              </button>
+          </div>
+          <div class="col-7 item-price">
+              <span class="new-price">${itemPrice} </span>
+              <span class="currency">تومان</span>
+          </div>
+       </div>
+  `;
+    }
+    else {
+      menuItem.innerHTML = `
             <div class="-12 img-name row">
                 <div class="col-5 item-img">
                     <img src=${itemImage} alt>
@@ -235,16 +325,18 @@ function getItems(items, slug) {
             </div>
             <div class="-12 price-order row">
                 <div class="col-5 item-order">
-                    <button class="order-btn">
+                    <button onclick="selectInfo(event)" class="order-btn">
                         جزئیات
                     </button>
                 </div>
                 <div class="col-7 item-price">
-                    <span class="new-price">${itemPrice} </span>
-                    <span class="currency">تومان</span>
+                    <span class="new-price"> نا موجود </span>
+                    <span class="currency"></span>
                 </div>
              </div>
         `;
+    }
+
     const targetMenulist = document.getElementById(`${slug}`)
     targetMenulist.appendChild(menuItem)
   }
