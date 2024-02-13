@@ -10,14 +10,19 @@ class Item(models.Model):
     """
 
     YES = "YES"
-    NO = "NO"
+    NO = ""
 
     AVAILABILITY_CHOICES = [
         (YES, "موجود"),
-        (NO, "ناموجود"),
+        (NO, "عدم موجودی"),
     ]
-    title = models.CharField(max_length=255)
-    unit_price = models.PositiveIntegerField()
+    title = models.CharField(
+        max_length=255,
+        verbose_name="نام",
+    )
+    unit_price = models.PositiveIntegerField(
+        verbose_name="قیمت",
+    )
 
     slug = AutoSlugField(
         populate_from="title",
@@ -26,10 +31,21 @@ class Item(models.Model):
         null=True,
         blank=True,
         editable=True,
+        verbose_name="کد شماره صفحه",
     )
 
-    description = models.CharField(max_length=255, null=True, blank=True)
-    image = models.ImageField(upload_to="item_images/", null=True, blank=True)
+    description = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+        verbose_name="توضیحات",
+    )
+    image = models.ImageField(
+        upload_to="item_images/",
+        null=True,
+        blank=True,
+        verbose_name="عکس",
+    )
     available = models.CharField(
         max_length=3,
         choices=AVAILABILITY_CHOICES,
@@ -37,10 +53,19 @@ class Item(models.Model):
         verbose_name="وضعیت موجودی",
     )
     category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, related_name="item_category"
+        Category,
+        on_delete=models.CASCADE,
+        related_name="item_category",
+        verbose_name="طبقه بندی",
     )
-    created_at = models.DateTimeField(auto_now_add=True)
-    last_update = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="زمان ایجاد",
+    )
+    last_update = models.DateTimeField(
+        auto_now=True,
+        verbose_name="زمان آخرین ویرایش",
+    )
 
     def __str__(self) -> str:
         return self.title
@@ -58,3 +83,4 @@ class Item(models.Model):
 
     class Meta:
         verbose_name_plural = "آیتم ها"
+        verbose_name = "آیتم"
