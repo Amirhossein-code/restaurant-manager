@@ -17,4 +17,5 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # Copy the project code into the container
 COPY . /app/
+
 # EXPOSE 8000

@@ -18,4 +18,4 @@ DATABASES = {
     }
 }
 
-ALLOWED_HOSTS = ["restaurant.complexalmas.ir"]
+ALLOWED_HOSTS = ["5.34.197.3"]

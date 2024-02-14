@@ -1,4 +1,4 @@
-const baseUrl = 'http://backend:8000'
+const baseUrl = 'http://5.34.197.3:8000'
 
 // wow library init
 new WOW().init();

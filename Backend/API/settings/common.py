@@ -130,15 +130,10 @@ SIMPLE_JWT = {
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3321",  # Docker frontend
-    "http://127.0.0.1:3321",  # Docker frontend using 127.0.0.1
-    "http://localhost:5500",  # Frontend development
-    "http://127.0.0.1:5500",  # Frontend development using 127.0.0.1
-    "http://localhost:8000",  # Backend using localhost
-    "http://127.0.0.1:8000",  # Backend using 127.0.0.1
-    "https://complexalmas.ir",  # Production domain
-    "http://127.0.0.1:5500",  # Frontend base URL
+    "http://5.34.197.3",
+    "http://5.34.197.3:8000",
 ]
+
 
 LOGGING = {
     "version": 1,

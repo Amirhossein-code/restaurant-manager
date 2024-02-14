@@ -14,17 +14,13 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
-      - "3307:3306"
-    healthcheck:
-      test: ["CMD", "mysql", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}", "-e", "SELECT 1"]
-      timeout: 20s
-      retries: 10
-  
+      - "3306:3306"
+
   backend:
-    build: 
+    build:
       context: ./Backend
       dockerfile: Dockerfile
-    command: sh -c "python3 manage.py migrate --noinput && python manage.py collectstatic && python manage.py makemessages -l fa && python manage.py compilemessages && gunicorn --bind 0.0.0.0:8000 API.wsgi"
+    command: sh -c "python manage.py migrate --noinput && python manage.py makemessages -l fa && python manage.py compilemessages && gunicorn --bind 0.0.0.0:8000 API.wsgi"
     restart: always
     volumes:
       - ./Backend:/app
@@ -33,19 +29,18 @@ services:
     env_file:
       - ./Backend/.env
     depends_on:
-      db:
-        condition: service_healthy
+      - db
 
   nginx:
-    build: 
+    build:
       context: .
-      dockerfile: Dockerfile  
+      dockerfile: Dockerfile
     container_name: nginx
     restart: always
     ports:
-      - "80:80"  
+      - "80:80"
     depends_on:
-      - backend  
+      - backend
 
 volumes:
   data:
