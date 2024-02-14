@@ -24,8 +24,7 @@ services:
     build: 
       context: ./Backend
       dockerfile: Dockerfile
-    container_name: api
-    command: sh -c "python3 manage.py migrate --noinput && python manage.py makemessages -l fa && python manage.py compilemessages && python manage.py runserver 0.0.0.0:8000"
+    command: sh -c "python3 manage.py migrate --noinput && python manage.py collectstatic && python manage.py makemessages -l fa && python manage.py compilemessages && gunicorn --bind 0.0.0.0:8000 API.wsgi"
     restart: always
     volumes:
       - ./Backend:/app
@@ -37,14 +36,14 @@ services:
       db:
         condition: service_healthy
 
-  frontend:
+  nginx:
     build: 
-      context: ./Frontend
+      context: .
       dockerfile: Dockerfile  
-    container_name: frontend
+    container_name: nginx
     restart: always
     ports:
-      - "3321:80"  
+      - "80:80"  
     depends_on:
       - backend  
 
