@@ -24,6 +24,7 @@ services:
     restart: always
     volumes:
       - ./Backend:/app
+      - media_volume:/media
     ports:
       - "8000:8000"
     env_file:
@@ -41,6 +42,10 @@ services:
       - "80:80"
     depends_on:
       - backend
+    volumes:
+      - media_volume:/media
+      
 
 volumes:
   data:
+  media_volume:
