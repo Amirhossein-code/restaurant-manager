@@ -9,7 +9,7 @@ COPY default.conf /etc/nginx/conf.d/
 COPY Frontend /usr/share/nginx/html
 
 # Copy django static file that are going to be served with nginx at port 8000
-COPY Backend/static /usr/share/nginx/static
+# COPY Backend/static /usr/share/nginx/static
 
 # Expose port 80 to the outside world
 EXPOSE 80 

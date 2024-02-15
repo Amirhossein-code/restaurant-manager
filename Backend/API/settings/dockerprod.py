@@ -18,4 +18,4 @@ DATABASES = {
     }
 }
 
-ALLOWED_HOSTS = ["5.34.197.3"]
+ALLOWED_HOSTS = ["5.34.196.45"]

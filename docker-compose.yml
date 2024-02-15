@@ -20,11 +20,10 @@ services:
     build:
       context: ./Backend
       dockerfile: Dockerfile
-    command: sh -c "python manage.py migrate --noinput && python manage.py makemessages -l fa && python manage.py compilemessages && gunicorn --bind 0.0.0.0:8000 API.wsgi"
+    command: sh -c "python manage.py migrate --noinput && python manage.py makemessages -l fa && python manage.py compilemessages && gunicorn API.wsgi --bind 0.0.0.0:8000"
     restart: always
     volumes:
       - ./Backend:/app
-      - media_volume:/media
     ports:
       - "8000:8000"
     env_file:
@@ -42,10 +41,6 @@ services:
       - "80:80"
     depends_on:
       - backend
-    volumes:
-      - media_volume:/media
-      
 
 volumes:
   data:
-  media_volume:
