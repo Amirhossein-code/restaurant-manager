@@ -20,7 +20,6 @@ class ItemSerializer(serializers.ModelSerializer):
         read_only_fields = ["id", "slug"]
 
     def get_image(self, obj):
-        # Assuming obj.image contains the original image URL
         original_url = obj.image.url
         # Construct absolute URL with the current host and port
         absolute_url = f"http://{self.context['request'].get_host()}{original_url}"
