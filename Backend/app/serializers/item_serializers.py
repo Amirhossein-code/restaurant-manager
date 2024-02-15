@@ -24,7 +24,8 @@ class ItemSerializer(serializers.ModelSerializer):
         original_url = obj.image.url
         # Construct absolute URL with the current host and port
         absolute_url = f"http://{self.context['request'].get_host()}{original_url}"
-        return absolute_url
+        modified_url = absolute_url.replace(":8000/", ":8001/")
+        return modified_url
 
 
 class SimpleItemSerializer(serializers.ModelSerializer):
