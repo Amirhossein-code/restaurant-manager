@@ -22,9 +22,10 @@ class ItemSerializer(serializers.ModelSerializer):
     def get_image(self, obj):
         # Assuming obj.image contains the original image URL
         original_url = obj.image.url
-        # Replace port 8000 with port 8001
-        modified_url = original_url.replace(":8000/", ":8001/")
-        return modified_url
+        # Construct absolute URL with the current host and port
+        absolute_url = f"http://{self.context['request'].get_host()}{original_url}"
+        return absolute_url
+
 
 class SimpleItemSerializer(serializers.ModelSerializer):
     class Meta:
