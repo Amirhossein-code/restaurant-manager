@@ -575,7 +575,10 @@ i {
     align-items: right;
 }
 
-.product-caption {}
+.product-caption {
+    text-align: right;
+    direction: rtl;
+}
 
 .price-order {
     width: 100%;
@@ -606,6 +609,7 @@ i {
     font-weight: 500;
     align-self: self-end;
     margin-top: 10px;
+    text-align: center;
 }
 
 .old-price {
