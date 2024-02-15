@@ -10,7 +10,7 @@ new WOW().init();
 var swiper = new Swiper(".swiper", {
   slidesPerView: 4.5,
   spaceBetween: 10,
-  loop: true,
+  loop: false,
   centerSlide: 'true',
   fade: 'true',
   gragCursor: 'true',
@@ -281,60 +281,120 @@ function getItems(items, slug) {
     const menuItem = document.createElement("div")
     menuItem.className = "menu-item row"
     if (itemAvailble = 'YES') {
-      menuItem.innerHTML = `
-      <div class="img-name row">
-          <div class="col-5 item-img">
-              <img src=${itemImage} alt>
-          </div>
-          <div class="col-7 item-name">
-              <h2 class="product-name">
-                  ${itemtitle}
-              </h2>
-              <span class="product-caption">
-                  ${itemDescriptin}
-              </span>
-          </div>
-      </div>
-      <div class="price-order row">
-          <div class="col-5 item-order">
-              <button onclick="selectInfo(event)" class="order-btn">
-                  جزئیات
-              </button>
-          </div>
-          <div class="col-7 item-price">
-              <span class="new-price">${itemPrice} </span>
-              <span class="currency">تومان</span>
-          </div>
-       </div>
-  `;
+      if (itemDescriptin != null){
+        menuItem.innerHTML = `
+        <div class="img-name row">
+            <div class="col-5 item-img">
+                <img src=${itemImage} alt>
+            </div>
+            <div class="col-7 item-name">
+                <h2 class="product-name">
+                    ${itemtitle}
+                </h2>
+                <span class="product-caption">
+                    ${itemDescriptin}
+                </span>
+            </div>
+        </div>
+        <div class="price-order row">
+            <div class="col-5 item-order">
+                <button onclick="selectInfo(event)" class="order-btn">
+                    جزئیات
+                </button>
+            </div>
+            <div class="col-7 item-price">
+                <span class="new-price">${itemPrice} </span>
+                <span class="currency">تومان</span>
+            </div>
+         </div>
+    `;
+      }
+      else{
+        menuItem.innerHTML = `
+        <div class="img-name row">
+            <div class="col-5 item-img">
+                <img src=${itemImage} alt>
+            </div>
+            <div class="col-7 item-name">
+                <h2 class="product-name">
+                    ${itemtitle}
+                </h2>
+                <span class="product-caption">
+                    
+                </span>
+            </div>
+        </div>
+        <div class="price-order row">
+            <div class="col-5 item-order">
+                <button onclick="selectInfo(event)" class="order-btn">
+                    جزئیات
+                </button>
+            </div>
+            <div class="col-7 item-price">
+                <span class="new-price">${itemPrice} </span>
+                <span class="currency">تومان</span>
+            </div>
+         </div>
+    `;
+      }
     }
     else {
-      menuItem.innerHTML = `
-            <div class="img-name row">
-                <div class="col-5 item-img">
-                    <img src=${itemImage} alt>
-                </div>
-                <div class="col-7 item-name">
-                    <h2 class="product-name">
-                        ${itemtitle}
-                    </h2>
-                    <span class="product-caption">
-                        ${itemDescriptin}
-                    </span>
-                </div>
+      if (itemDescriptin != null){
+        menuItem.innerHTML = `
+              <div class="img-name row">
+                  <div class="col-5 item-img">
+                      <img src=${itemImage} alt>
+                  </div>
+                  <div class="col-7 item-name">
+                      <h2 class="product-name">
+                          ${itemtitle}
+                      </h2>
+                      <span class="product-caption">
+                          ${itemDescriptin}
+                      </span>
+                  </div>
+              </div>
+              <div class="price-order row">
+                  <div class="col-5 item-order">
+                      <button onclick="selectInfo(event)" class="order-btn">
+                          جزئیات
+                      </button>
+                  </div>
+                  <div class="col-7 item-price">
+                      <span class="new-price"> نا موجود </span>
+                      <span class="currency"></span>
+                  </div>
+               </div>
+          `;
+      }
+      else{
+        menuItem.innerHTML = `
+        <div class="img-name row">
+            <div class="col-5 item-img">
+                <img src=${itemImage} alt>
             </div>
-            <div class="price-order row">
-                <div class="col-5 item-order">
-                    <button onclick="selectInfo(event)" class="order-btn">
-                        جزئیات
-                    </button>
-                </div>
-                <div class="col-7 item-price">
-                    <span class="new-price"> نا موجود </span>
-                    <span class="currency"></span>
-                </div>
-             </div>
-        `;
+            <div class="col-7 item-name">
+                <h2 class="product-name">
+                    ${itemtitle}
+                </h2>
+                <span class="product-caption">
+                    
+                </span>
+            </div>
+        </div>
+        <div class="price-order row">
+            <div class="col-5 item-order">
+                <button onclick="selectInfo(event)" class="order-btn">
+                    جزئیات
+                </button>
+            </div>
+            <div class="col-7 item-price">
+                <span class="new-price"> نا موجود </span>
+                <span class="currency"></span>
+            </div>
+         </div>
+    `;
+      }
     }
 
     const targetMenulist = document.getElementById(`${slug}`)

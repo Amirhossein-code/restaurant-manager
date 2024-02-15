@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&family=Marhey&family=Nunito:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @font-face {
     font-family: 'shabnam';
@@ -95,7 +96,7 @@ body.body#body {
     height: 60px;
     position: fixed;
     bottom: 50px;
-    left: 5px;
+    right: 25px;
     background-color: #f5f5f5;
     border-radius: 50%;
     padding: 5px;
@@ -398,8 +399,9 @@ i {
     color: var(--font-color-);
     width: 100%;
     text-align: center;
-    font-family: 'Playfair';
+    font-family: "Amiri", serif;
     display: inline-block;
+    margin-top: 1rem;
 }
 
 
@@ -421,6 +423,7 @@ i {
     padding: 0 6px;
     transition: all 1s;
     text-align: center;
+    font-size: 100%;
 }
 
 .categori-card:hover,
@@ -495,13 +498,13 @@ i {
 }
 
 
-.menu-list-container .menu-list{
+.menu-list-container .menu-list {
     display: none;
     align-items: center;
     justify-content: space-between;
 }
 
-.menu-list-container :first-child{
+.menu-list-container :first-child {
     display: flex;
 }
 
@@ -523,7 +526,7 @@ i {
     transition: background .2s;
 }
 
-.closelink:hover #infoContainer{
+.closelink:hover #infoContainer {
     cursor: pointer;
     background-color: pink;
 }
@@ -551,8 +554,8 @@ i {
 
 .item-img {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
 }
@@ -592,24 +595,28 @@ i {
 .item-order {
     display: flex;
     align-items: center;
-    justify-content: end;
-    margin-left: 0%;
+    justify-content: center;
+    text-align: center;
+    margin-inline: auto;
 }
 
 .order-btn {
     padding: 0px 8px;
-    width: 88px;
+    width: 68px;
     height: 34px;
     border: none;
     outline: none;
-    background-color: var(--order-button-color-);
+    background-color: var(--green-background-);
     border-radius: var(--order-button-radius-);
     color: ghostwhite;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     align-self: self-end;
     margin-top: 10px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .old-price {
@@ -660,6 +667,22 @@ i {
     margin-left: 10px;
 }
 
+.new-price {
+    font-weight: bold;
+}
+
+.currency {
+    font-family: "Amiri", serif;
+    margin-inline: 0.5rem;
+}
+
+.item-price {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+}
+
 /*footer*/
 .footer {
     width: 100%;
@@ -693,9 +716,20 @@ i {
     margin-block: 0;
 }
 
+.footer_socail{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
 .footer_header,
 .footer_body {
     height: 40%;
+}
+
+.footer_header {
+    justify-content: space-around;
+    flex-direction: row;
 }
 
 .footer_body {
@@ -718,8 +752,8 @@ i {
 }
 
 .footer_logo img {
-    width: 100%;
-    height: 100%;
+    width: 256px;
+    height: 180.6px;
 }
 
 .footer_adress {
@@ -741,7 +775,8 @@ i {
     justify-content: center;
     margin-inline: auto;
     background-color: #0b1d35;
-    padding: 20px;
+    /* padding: 20px; */
+    padding: 5px 10px;
     border-radius: 1rem;
 }
 
@@ -752,17 +787,22 @@ i {
 a.instagram-link {
     color: rgb(79, 0, 128);
     font-size: 1.5em;
-    margin-inline-end: 1rem;
-    border-left: 1px solid ghostwhite;
     padding-inline: 20px;
+    margin-right: 5rem;
 }
 
 .footer a {
     color: ghostwhite;
     text-transform: uppercase;
 }
+
 .footer i {
     color: ghostwhite;
+}
+
+.footer_body i {
+    align-self: center;
+    margin: auto auto;
 }
 
 /*items info*/
@@ -777,9 +817,9 @@ a.instagram-link {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-     background-color: hsla(230, 75%, 15%, .1);
+    background-color: hsla(230, 75%, 15%, .1);
     backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px); 
+    -webkit-backdrop-filter: blur(24px);
     z-index: 10000;
     pointer-events: none;
     color: var(--font-color-);
@@ -800,7 +840,7 @@ a.instagram-link {
     height: 100%;
 }
 
-.closeLink{
+.closeLink {
     color: var(--font-color-);
     font-size: 3em;
     cursor: pointer;
@@ -1028,12 +1068,12 @@ tr:nth-child(even) {
 
 @keyframes flicker {
 
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    0%, 18%,  25%,  57%, 70% {
 
         text-shadow: var(--neon-shadow-)
     }
 
-    20%, 24%, 55% {
+    20%, 24%, 55%, 100% {
         text-shadow: none;
     }
 }
