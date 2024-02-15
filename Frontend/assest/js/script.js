@@ -48,7 +48,8 @@ const categori = document.getElementsByClassName("swiper-slide"),
   ingTable = document.getElementById("ingradientTable"),
   fdTable = document.getElementById("foodValueTable"),
   infoContainer = document.getElementById("infoContainer"),
-  closeLink = document.getElementById("closeLink")
+  closeLink = document.getElementById("closeLink"),
+  menuLists = document.getElementsByName("menu-list")
 
 //  first enter things need to do -
 // every time site reaload or loaded this thing need to happend
@@ -71,13 +72,12 @@ window.addEventListener('load', function () {
   }
   //show first catgories menu items in the first view and enter of the page
 
-  menuListesContainer["children"][0].style.display = 'flex'
+  // menuListesContainer["children"][0].style.display = 'flex'
+    // menuLists[0].style.display
 
   categoriCard[0].classList.add("active");
   // none the displaye of the other menus
-  for (let y = 1; y < menuListesContainer['children'].length; y++) {
-    menuListesContainer["children"][y].style.display = 'none';
-  }
+  //  
   menuListesContainer["children"][0].classList.remove("animated");
   menuListesContainer["children"][0].classList.add("animated");
 })
@@ -282,7 +282,7 @@ function getItems(items, slug) {
     menuItem.className = "menu-item row"
     if (itemAvailble = 'YES') {
       menuItem.innerHTML = `
-      <div class="-12 img-name row">
+      <div class="img-name row">
           <div class="col-5 item-img">
               <img src=${itemImage} alt>
           </div>
@@ -295,7 +295,7 @@ function getItems(items, slug) {
               </span>
           </div>
       </div>
-      <div class="-12 price-order row">
+      <div class="price-order row">
           <div class="col-5 item-order">
               <button onclick="selectInfo(event)" class="order-btn">
                   جزئیات
@@ -310,7 +310,7 @@ function getItems(items, slug) {
     }
     else {
       menuItem.innerHTML = `
-            <div class="-12 img-name row">
+            <div class="img-name row">
                 <div class="col-5 item-img">
                     <img src=${itemImage} alt>
                 </div>
@@ -323,7 +323,7 @@ function getItems(items, slug) {
                     </span>
                 </div>
             </div>
-            <div class="-12 price-order row">
+            <div class="price-order row">
                 <div class="col-5 item-order">
                     <button onclick="selectInfo(event)" class="order-btn">
                         جزئیات
