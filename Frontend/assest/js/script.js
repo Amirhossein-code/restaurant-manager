@@ -69,8 +69,9 @@ window.addEventListener('load', function () {
   }
   //show first catgories menu items in the first view and enter of the page
 
-  var categoiCardA = [...categoriCard];
-  categoiCardA[0].classList.add("active");
+  // var categoiCardA = [...categoriCard];
+  // categoiCardA[0].classList.add("active");
+  // console.log(categoriCrad,categoriCardA)
 
   // none the displaye of the other menus
 
@@ -182,7 +183,7 @@ function showMenu(event) {
 
   }
 
-  targetMenu.style.display = 'flex'
+  targetMenu.style.display = 'flex';
   targetMenu.classList.remove("animated");
   targetMenu.classList.add("animated");
 
