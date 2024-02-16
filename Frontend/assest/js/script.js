@@ -69,10 +69,6 @@ window.addEventListener('load', function () {
   }
   //show first catgories menu items in the first view and enter of the page
 
-  // var categoiCardA = [...categoriCard];
-  // categoiCardA[0].classList.add("active");
-  // console.log(categoriCrad,categoriCardA)
-
   // none the displaye of the other menus
 
   menuListesContainer["children"][0].classList.remove("animated");
