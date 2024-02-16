@@ -3,9 +3,6 @@ const baseUrl = 'http://5.34.196.45:8000'
 // wow library init
 new WOW().init();
 
-//
-// import 'animate.css';
-
 //swiper library init
 var swiper = new Swiper(".swiper", {
   slidesPerView: 4.5,
@@ -72,12 +69,11 @@ window.addEventListener('load', function () {
   }
   //show first catgories menu items in the first view and enter of the page
 
-  // menuListesContainer["children"][0].style.display = 'flex'
-    // menuLists[0].style.display
+  var categoiCardA = [...categoriCard];
+  categoiCardA[0].classList.add("active");
 
-  categoriCard[0].classList.add("active");
   // none the displaye of the other menus
-  //  
+
   menuListesContainer["children"][0].classList.remove("animated");
   menuListesContainer["children"][0].classList.add("animated");
 })
