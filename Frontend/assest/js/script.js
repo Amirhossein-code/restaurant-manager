@@ -80,16 +80,7 @@ const categori = document.getElementsByClassName("swiper-slide"),
 // })
 
 //
-themecontainer.addEventListener("click", () => {
-  themecontainer.classList.toggle("dark");
-  var bodyTheme = document.body.getAttribute("theme");
-  if (themecontainer.classList.contains("dark")) {
-    document.body.setAttribute("theme", "dark");
-  }
-  else {
-    document.body.setAttribute("theme", "light");
-  }
-})
+
 
 // url
 const itemApi = `${baseUrl}/app/items/`,
@@ -106,8 +97,18 @@ fetch(categoriApi).then((res) => {
   })
 });
 
-window.addEventListener("click" , ()=> {
+window.addEventListener("click", () => {
   preload.style.display = "none";
+  themecontainer.addEventListener("click", () => {
+    themecontainer.classList.toggle("dark");
+    var bodyTheme = document.body.getAttribute("theme");
+    if (themecontainer.classList.contains("dark")) {
+      document.body.setAttribute("theme", "dark");
+    }
+    else {
+      document.body.setAttribute("theme", "light");
+    }
+  })
 })
 // none the displaye of the other menus
 
@@ -123,11 +124,12 @@ for (let x = 0; x < categori.length; x++) {
 // menuListesContainer["children"][0].style.display = 'flex'
 // menuLists[0].style.display
 
-categoriCard[0].classList.add("active");
+// categoriCard[0].classList.add("active");
+
 // none the displaye of the other menus
 //  
-menuListesContainer["children"][0].classList.remove("animated");
-menuListesContainer["children"][0].classList.add("animated");
+// menuListesContainer["children"][0].classList.remove("animated");
+// menuListesContainer["children"][0].classList.add("animated");
 
 infoContainer.addEventListener("click", () => {
   closeInfoC()
@@ -233,15 +235,15 @@ async function showMenu(event) {
   }
 
   targetMenu.style.display = 'flex';
-  targetMenu.classList.remove("animated");
-  targetMenu.classList.add("animated");
+  // targetMenu.classList.remove("animated");
+  // targetMenu.classList.add("animated");
 
 
 
   for (let q = 0; q < categoriCard.length; q++) {
-    categoriCard[q].classList.remove("active");
+    // categoriCard[q].classList.remove("active");
   }
-  activeTarget.classList.add("active");
+  // activeTarget.classList.add("active");
   let animetarget = "#" + targetValue + " " + ".menu-item"
 }
 
