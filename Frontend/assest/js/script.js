@@ -111,8 +111,8 @@ window.addEventListener("click" , ()=> {
 })
 // none the displaye of the other menus
 
-menuListesContainer["children"][0].classList.remove("animated");
-menuListesContainer["children"][0].classList.add("animated");
+// menuListesContainer["children"][0].classList.remove("animated");
+// menuListesContainer["children"][0].classList.add("animated");
 
 //set onclick event to all categoris
 for (let x = 0; x < categori.length; x++) {
