@@ -3,9 +3,6 @@ const baseUrl = 'http://5.34.196.45:8000'
 // wow library init
 new WOW().init();
 
-//
-// import 'animate.css';
-
 //swiper library init
 var swiper = new Swiper(".swiper", {
   slidesPerView: 4.5,
@@ -99,6 +96,7 @@ console.log("hi")
   const itemApi = `${baseUrl}/app/items/`,
     categoriApi = `${baseUrl}/app/categories/`;
 
+<<<<<<< HEAD
   const swiperWrapper = document.getElementById("swiper-wrapper"),
     menuListContainer = document.getElementById("menu-list-container")
 
@@ -108,6 +106,13 @@ console.log("hi")
       createCategori(result.results);
     })
   });
+=======
+  // none the displaye of the other menus
+
+  menuListesContainer["children"][0].classList.remove("animated");
+  menuListesContainer["children"][0].classList.add("animated");
+})
+>>>>>>> b7914b557bc48f24588178711c3c0c6195ebcccf
 
 //set onclick event to all categoris
 for (let x = 0; x < categori.length; x++) {
@@ -228,7 +233,7 @@ async function showMenu(event) {
 
   }
 
-  targetMenu.style.display = 'flex'
+  targetMenu.style.display = 'flex';
   targetMenu.classList.remove("animated");
   targetMenu.classList.add("animated");
 
