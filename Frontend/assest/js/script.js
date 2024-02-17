@@ -80,39 +80,39 @@ const categori = document.getElementsByClassName("swiper-slide"),
 // })
 
 //
-console.log("hi")
-  preload.style.display = "none";
-  themecontainer.addEventListener("click", () => {
-    themecontainer.classList.toggle("dark");
-    let bodyTheme = document.body.getAttribute("theme");
-    if (themecontainer.classList.contains("dark")) {
-      document.body.setAttribute("theme", "dark");
-    }
-    else {
-      document.body.setAttribute("theme", "light");
-    }
-  })
-  // url
-  const itemApi = `${baseUrl}/app/items/`,
-    categoriApi = `${baseUrl}/app/categories/`;
-
-<<<<<<< HEAD
-  const swiperWrapper = document.getElementById("swiper-wrapper"),
-    menuListContainer = document.getElementById("menu-list-container")
-
-  fetch(categoriApi).then((res) => {
-    var categoriData = res.json();
-    categoriData.then(result => {
-      createCategori(result.results);
-    })
-  });
-=======
-  // none the displaye of the other menus
-
-  menuListesContainer["children"][0].classList.remove("animated");
-  menuListesContainer["children"][0].classList.add("animated");
+themecontainer.addEventListener("click", () => {
+  themecontainer.classList.toggle("dark");
+  var bodyTheme = document.body.getAttribute("theme");
+  if (themecontainer.classList.contains("dark")) {
+    document.body.setAttribute("theme", "dark");
+  }
+  else {
+    document.body.setAttribute("theme", "light");
+  }
 })
->>>>>>> b7914b557bc48f24588178711c3c0c6195ebcccf
+
+// url
+const itemApi = `${baseUrl}/app/items/`,
+  categoriApi = `${baseUrl}/app/categories/`;
+
+
+const swiperWrapper = document.getElementById("swiper-wrapper"),
+  menuListContainer = document.getElementById("menu-list-container")
+
+fetch(categoriApi).then((res) => {
+  var categoriData = res.json();
+  categoriData.then(result => {
+    createCategori(result.results);
+  })
+});
+
+window.addEventListener("click" , ()=> {
+  preload.style.display = "none";
+})
+// none the displaye of the other menus
+
+menuListesContainer["children"][0].classList.remove("animated");
+menuListesContainer["children"][0].classList.add("animated");
 
 //set onclick event to all categoris
 for (let x = 0; x < categori.length; x++) {
@@ -154,8 +154,8 @@ function selectInfo(event) {
 }
 
 function showInfo(slug) {
-  const ingUrl = `${baseUrl}/app/items/${slug}/ingredients/`
-  const fdUrl = `${baseUrl}/app/items/${slug}/food-values/`
+  var ingUrl = `${baseUrl}/app/items/${slug}/ingredients/`
+  var fdUrl = `${baseUrl}/app/items/${slug}/food-values/`
   ingShow(ingUrl);
   fdShow(fdUrl);
 }
@@ -178,7 +178,7 @@ function ingShow(url) {
 
 function fdShow(url) {
   fetch(url).then(respon => {
-    const fd = respon.json()
+    var fd = respon.json()
     fd.then((datas) => {
       datas.forEach((data) => {
         const tr = document.createElement("tr")
@@ -230,7 +230,6 @@ async function showMenu(event) {
   let targetMenu = document.getElementById(targetValue); // select menu list with especific id wich we need it and customer clicked on that menu
   for (let z = 0; z < menuListesContainer["children"].length; z++) {
     menuListesContainer["children"][z].style.display = 'none'
-
   }
 
   targetMenu.style.display = 'flex';
@@ -429,7 +428,7 @@ async function getItems(items, slug) {
       }
     }
 
-    const targetMenulist = document.getElementById(`${slug}`)
+    var targetMenulist = document.getElementById(`${slug}`)
     targetMenulist.appendChild(menuItem)
   }
 }
