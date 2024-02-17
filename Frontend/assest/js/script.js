@@ -53,36 +53,78 @@ const categori = document.getElementsByClassName("swiper-slide"),
 
 //  first enter things need to do -
 // every time site reaload or loaded this thing need to happend
-window.addEventListener('load', function () {
-  preload.style.display = 'none';
+// window.onload(() => {
+//   console.log("hi")
+//   preload.style.display = "none";
+//   themecontainer.addEventListener("click", () => {
+//     themecontainer.classList.toggle("dark");
+//     let bodyTheme = document.body.getAttribute("theme");
+//     if (themecontainer.classList.contains("dark")) {
+//       document.body.setAttribute("theme", "dark");
+//     }
+//     else {
+//       document.body.setAttribute("theme", "light");
+//     }
+//   })
+//   // url
+//   const itemApi = `${baseUrl}/app/items/`,
+//     categoriApi = `${baseUrl}/app/categories/`;
+
+//   const swiperWrapper = document.getElementById("swiper-wrapper"),
+//     menuListContainer = document.getElementById("menu-list-container")
+
+//   fetch(categoriApi).then((res) => {
+//     var categoriData = res.json();
+//     categoriData.then(result => {
+//       createCategori(result.results);
+//     })
+//   });
+
+// })
+
+//
+console.log("hi")
+  preload.style.display = "none";
   themecontainer.addEventListener("click", () => {
-    themecontainer.classList.toggle("dark")
-    let bodyTheme = this.document.body.getAttribute("theme")
+    themecontainer.classList.toggle("dark");
+    let bodyTheme = document.body.getAttribute("theme");
     if (themecontainer.classList.contains("dark")) {
-      this.document.body.setAttribute("theme", "dark")
+      document.body.setAttribute("theme", "dark");
     }
     else {
-      this.document.body.setAttribute("theme", "light")
-
+      document.body.setAttribute("theme", "light");
     }
   })
-  //set onclick event to all categoris
-  for (let x = 0; x < categori.length; x++) {
-    categori[x].setAttribute('onclick', 'showMenu(event)')
-  }
-  //show first catgories menu items in the first view and enter of the page
+  // url
+  const itemApi = `${baseUrl}/app/items/`,
+    categoriApi = `${baseUrl}/app/categories/`;
 
-  // menuListesContainer["children"][0].style.display = 'flex'
-    // menuLists[0].style.display
+  const swiperWrapper = document.getElementById("swiper-wrapper"),
+    menuListContainer = document.getElementById("menu-list-container")
 
-  categoriCard[0].classList.add("active");
-  // none the displaye of the other menus
-  //  
-  menuListesContainer["children"][0].classList.remove("animated");
-  menuListesContainer["children"][0].classList.add("animated");
-})
+  fetch(categoriApi).then((res) => {
+    var categoriData = res.json();
+    categoriData.then(result => {
+      createCategori(result.results);
+    })
+  });
 
-infoContainer.addEventListener("click" , () => {
+//set onclick event to all categoris
+for (let x = 0; x < categori.length; x++) {
+  categori[x].setAttribute('onclick', 'showMenu(event)')
+}
+//show first catgories menu items in the first view and enter of the page
+
+// menuListesContainer["children"][0].style.display = 'flex'
+// menuLists[0].style.display
+
+categoriCard[0].classList.add("active");
+// none the displaye of the other menus
+//  
+menuListesContainer["children"][0].classList.remove("animated");
+menuListesContainer["children"][0].classList.add("animated");
+
+infoContainer.addEventListener("click", () => {
   closeInfoC()
 })
 
@@ -94,7 +136,7 @@ function selectInfo(event) {
   fdTable.innerHTML = ''
   ingTable.innerHTML = ''
   infoContainer.style.display = 'flex'
-  infoContainer.style.width='100%'
+  infoContainer.style.width = '100%'
   const targetItemTitle = event.target.parentNode.parentNode.parentNode.firstElementChild.lastElementChild.firstElementChild.innerHTML
   fetch(`${baseUrl}/app/items/?title=${targetItemTitle}&category=&category__title__icontains=`)
     .then(respon => {
@@ -146,7 +188,7 @@ function fdShow(url) {
 }
 
 // show categoris exact menu by clicking on
-function showMenu(event) {
+async function showMenu(event) {
   let selected = event.target;
   let selectedClassP = event.target.parentNode.classList[0]
   let target;
@@ -202,23 +244,7 @@ function showMenu(event) {
 
 
 //======= get data from db and set it to the page
-
-
-// url
-const itemApi = `${baseUrl}/app/items/`,
-  categoriApi = `${baseUrl}/app/categories/`;
-
-const swiperWrapper = document.getElementById("swiper-wrapper"),
-  menuListContainer = document.getElementById("menu-list-container")
-
-fetch(categoriApi).then((res) => {
-  var categoriData = res.json();
-  categoriData.then(result => {
-    createCategori(result.results);
-  })
-});
-
-function createCategori(data) {
+async function createCategori(data) {
   data.forEach(categoriElement => {
     var categoriId = categoriElement.id
     var categorititle = categoriElement.title;
@@ -265,7 +291,7 @@ function createCategori(data) {
     })
   });
 }
-function getItems(items, slug) {
+async function getItems(items, slug) {
   // const parentMenulist = document.getElementById(`slug`)
   for (var x = 0; x < items.length; x++) {
     // console.log(items[x])
@@ -281,7 +307,7 @@ function getItems(items, slug) {
     const menuItem = document.createElement("div")
     menuItem.className = "menu-item row"
     if (itemAvailble = 'YES') {
-      if (itemDescriptin != null){
+      if (itemDescriptin != null) {
         menuItem.innerHTML = `
         <div class="img-name row">
             <div class="col-5 item-img">
@@ -309,7 +335,7 @@ function getItems(items, slug) {
          </div>
     `;
       }
-      else{
+      else {
         menuItem.innerHTML = `
         <div class="img-name row">
             <div class="col-5 item-img">
@@ -338,8 +364,9 @@ function getItems(items, slug) {
     `;
       }
     }
+
     else {
-      if (itemDescriptin != null){
+      if (itemDescriptin != null) {
         menuItem.innerHTML = `
               <div class="img-name row">
                   <div class="col-5 item-img">
@@ -367,7 +394,7 @@ function getItems(items, slug) {
                </div>
           `;
       }
-      else{
+      else {
         menuItem.innerHTML = `
         <div class="img-name row">
             <div class="col-5 item-img">
