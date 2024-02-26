@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:8000/'
+const baseUrl = "http://5.34.196.45/:8000/";
 
 //url
 const categoriesUrl = `${baseUrl}app/categories/`;
