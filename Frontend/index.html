@@ -4,6 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!-- normalise.css link -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+        <!--costume css link-->
         <link rel="stylesheet" href="assest/css/style.css">
         <!-- Libraries Stylesheet -->
         <link href="lib/owlcarousel/assets/owl.carousel.min.css"
@@ -22,24 +27,12 @@
     </head>
     <body id="body" class="body dark" theme="light" dir="rtl">
         <!--preloader-->
+
         <div class="preload" id="preload">
             <div class="loadingio-spinner-spinner-55gz0g8ky3g"><div
                     class="ldio-eopbhvtcszn">
                     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
                 </div></div>
-        </div>
-
-        <!--item's info-->
-        <div class="info-container" id="infoContainer">
-            <table class="ingradient" id="ingradientTable">
-
-            </table>
-            <table class="food-value" id="foodValueTable">
-
-            </table>
-            <a class="closeLink" onclick="closeInfoC()" id="closeLink" href>
-                <i class="fa fa-close" id="colseInfo"></i>
-            </a>
         </div>
 
         <!-- mobile mode -->
@@ -50,850 +43,71 @@
                 class="dark">
         </div>
         <div class="container" id="body-container">
-
-            <div class="header">
-                <span class="header-title">
-                    welcome
-
-                </span>
-                <span class="header-subtitle">
-                    به رستوران الماس خوش آمدید
-                </span>
-            </div>
             <div class="menu-body" id="menu-body">
                 <div class="categori-container" id="categori-container">
                     <div class="swiper" id="swiper" dir="rtl">
-                        <div class="swiper-wrapper" id="swiper-wrapper"
-                            dir="rtl">\
-<!-- 
-                            <div class="swiper-slide" target-menu="burger">
-                                <div class="categori-card">
-                                    <div class="categori-icon">
-                                        <img
-                                            src="assest/img/burger-logo.png"
-                                            alt>
-                                    </div>
-                                    <div class="categori-name">
-                                        <span>برگر</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" target-menu="pizza">
-                                <div class="categori-card">
-                                    <div class="categori-icon">
-                                        <img
-                                            src="assest/img/pizza-logo.png"
-                                            alt>
-                                    </div>
-                                    <div class="categori-name">
-                                        <span>پیتزا</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" target-menu="meat">
-                                <div class="categori-card">
-                                    <div class="categori-icon">
-                                        <img
-                                            src="assest/img/A5.png"
-                                            alt>
-                                    </div>
-                                    <div class="categori-name">
-                                        <span>گوشت</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" target-menu="burger">
-                                <div class="categori-card">
-                                    <div class="categori-icon">
-                                        <img
-                                            src="assest/img/burger-logo.png"
-                                            alt>
-                                    </div>
-                                    <div class="categori-name">
-                                        <span>برگر</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" target-menu="salad">
-                                <div class="categori-card">
-                                    <div class="categori-icon">
-                                        <img
-                                            src="assest/img/Salad-icon.png"
-                                            alt>
-                                    </div>
-                                    <div class="categori-name">
-                                        <span>سالاد</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" target-menu="seafood">
-                                <div class="categori-card">
-                                    <div class="categori-icon">
-                                        <img
-                                            src="assest/img/Seafood-icon.png"
-                                            alt>
-                                    </div>
-                                    <div class="categori-name">
-                                        <span>غذای دریایی</span>
-                                    </div>
-                                </div>
-                            </div>
-                             -->
+                        <div class="swiper-wrapper" id="swiper-wrapper">
+
                         </div>
                     </div>
                 </div>
-                <div class="menu-list-container" id="menu-list-container">
-                    <!-- <div id="burger"
-                        class="burger menu-list row justify-content-md-between w-100 mx-1 ">
-                        <div class="menu-title">
-                            <span class="title-line left-line"></span>
-                            <h1 class>برگر</h1>
-                            <span class="title-line right-line"></span>
-                        </div>
-                        <div
-                            class="menu-item row">
-                            <div class=" img-name row">
-                                <div class="col-5 item-img">
-                                    <img src="assest/img/burger1.jpg"
-                                        alt>
-                                </div>
-                                <div class="col-7 item-name">
-                                    <h2 class="product-name">
-                                        بیکن برگر دودی پنیری
-                                    </h2>
-                                    <span class="product-caption">
-                                        یک عدد همبرگر گوشت گوساله همراه
-                                        بیکن دودی و پنیر چدار همراه با
-                                        سس مخصوص
-                                    </span>
-                                </div>
-                            </div>
-                            <div class=" price-order row">
-                                <div class="col-5 item-order">
-                                    <button class="order-btn">
-                                        جزئیات
-                                    </button>
-                                </div>
-                                <div class="col-7 item-price">
-                                    <span class="new-price">135.675</span>
-                                    <span class="currency">تومان</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="  menu-item   row ">
-                            <div class=" img-name row">
-                                <div class="col-5 item-img">
-                                    <img src="assest/img/burger2.jpg"
-                                        alt>
-                                </div>
-                                <div class="col-7 item-name">
-                                    <h2 class="product-name">
-                                        دوبل بیکن برگر دودی پنیری
-                                    </h2>
-                                    <span class="product-caption">
-                                        دو عدد همبرگر گوشت گوساله همراه
-                                        بیکن دودی و پنیر چدار همراه با
-                                        سس مخصوص
-                                    </span>
-                                </div>
-                            </div>
-                            <div class=" price-order row">
-                                <div class="col-5 item-order">
-                                    <button class="order-btn">
-                                        جزئیات
-                                    </button>
-                                </div>
-                                <div class=" col-7 item-price">
-                                    <span class="new-price">۱۳۵,۶۷۵</span>
-                                    <span class="currency">تومان</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="  menu-item   row  ">
-                            <div class=" img-name row">
-                                <div class="col-5 item-img">
-                                    <img src="assest/img/burger3.jpg"
-                                        alt>
-                                </div>
-                                <div class=" col-7 item-name">
-                                    <h2 class="product-name">
-                                        غول برگر با سس مخصوص
-                                    </h2>
-                                    <span class="product-caption">
-                                        دو عدد همبرگر گوشت گوساله دست
-                                        ساز همراه پنیر با سس مخصوص
-                                    </span>
-                                </div>
-                            </div>
-                            <div class=" price-order row">
-                                <div class="col-5 item-order">
-                                    <button class="order-btn">
-                                        جزئیات
-                                    </button>
-                                </div>
-                                <div class=" col-7 item-price">
+                <div class="menu-list-container row" id="menu-list-container"
+                    dir="rtl">
 
-                                    <span
-                                        class="new-price">۱۳۵,۶۷۵</span>
-                                    <span class="currency">تومان</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="  menu-item   row ">
-                            <div class=" img-name row">
-                                <div class="col-5 item-img">
-                                    <img src="assest/img/burger4.jpg"
-                                        alt>
-                                </div>
-                                <div class=" col-7 item-name">
-                                    <h2 class="product-name">
-                                        چیز برگر
-                                    </h2>
-                                    <span class="product-caption">
-                                        یک عدد همبرگر دست ساز ، دو عدد
-                                        پنیر ورقه ای چدار ، نان گرد
-                                        مخصوص برگر ، دو عدد سس کچاپ
-                                    </span>
-                                </div>
-                            </div>
-                            <div class=" price-order row">
-                                <div class="col-5 item-order">
-                                    <button class="order-btn">
-                                        جزئیات
-                                    </button>
-                                </div>
-                                <div class=" col-7 item-price">
+                </div>
+                <div class="menu-list-container row"
+                    id="first-menu-list-container" dir="rtl">
 
-                                    <span
-                                        class="new-price">۱۳۵,۶۷۵</span>
-                                    <span class="currency">تومان</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="pizza"
-                        class="pizza menu-list row justify-content-md-between w-100 mx-1">
-                        <div class="row w-100">
-                            <div class="menu-title">
-                                <span class="title-line left-line"></span>
-                                <h1 class>پیتزا</h1>
-                                <span class="title-line right-line"></span>
-                            </div>
-                            <div
-                                class="menu-item  row">
-                                <div class="img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/pizza1.jpg"
-                                            alt>
-                                    </div>
-                                    <div class="col-7 item-name">
-                                        <h2 class="product-name">
-                                            بیکن برگر دودی پنیری
-                                        </h2>
-                                        <span class="product-caption">
-                                            یک عدد همبرگر گوشت گوساله همراه
-                                            بیکن دودی و پنیر چدار همراه با
-                                            سس مخصوص
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class="col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="menu-item row">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/pizza2.jpg"
-                                            alt>
-                                    </div>
-                                    <div class="col-7 item-name">
-                                        <h2 class="product-name">
-                                            دوبل بیکن برگر دودی پنیری
-                                        </h2>
-                                        <span class="product-caption">
-                                            دو عدد همبرگر گوشت گوساله همراه
-                                            بیکن دودی و پنیر چدار همراه با
-                                            سس مخصوص
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class="col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="menu-item row">
-                                <div class="img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/pizza3.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            غول برگر با سس مخصوص
-                                        </h2>
-                                        <span class="product-caption">
-                                            دو عدد همبرگر گوشت گوساله دست
-                                            ساز همراه پنیر با سس مخصوص
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="menu-item row">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/pizza4.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            چیز برگر
-                                        </h2>
-                                        <span class="product-caption">
-                                            یک عدد همبرگر دست ساز ، دو عدد
-                                            پنیر ورقه ای چدار ، نان گرد
-                                            مخصوص برگر ، دو عدد سس کچاپ
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class="col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="salad"
-                        class="salad menu-list row justify-content-md-between mx-1 w-100">
-
-                        <div class="row w-100 mx-auto">
-                            <div class="menu-title">
-                                <span class="title-line left-line"></span>
-                                <h1 class>سالاد</h1>
-                                <span class="title-line right-line"></span>
-                            </div>
-                            <div
-                                class="  menu-item   row  ">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/salad.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            بیکن برگر دودی پنیری
-                                        </h2>
-                                        <span class="product-caption">
-                                            یک عدد همبرگر گوشت گوساله همراه
-                                            بیکن دودی و پنیر چدار همراه با
-                                            سس مخصوص
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class=" price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="  menu-item   row  ">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/salad2.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            دوبل بیکن برگر دودی پنیری
-                                        </h2>
-                                        <span class="product-caption">
-                                            دو عدد همبرگر گوشت گوساله همراه
-                                            بیکن دودی و پنیر چدار همراه با
-                                            سس مخصوص
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class=" price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="  menu-item   row  ">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/salad3.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            غول برگر با سس مخصوص
-                                        </h2>
-                                        <span class="product-caption">
-                                            دو عدد همبرگر گوشت گوساله دست
-                                            ساز همراه پنیر با سس مخصوص
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class=" price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="  menu-item   row  ">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/salad4.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            چیز برگر
-                                        </h2>
-                                        <span class="product-caption">
-                                            یک عدد همبرگر دست ساز ، دو عدد
-                                            پنیر ورقه ای چدار ، نان گرد
-                                            مخصوص برگر ، دو عدد سس کچاپ
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class=" price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="seafood"
-                        class="seafood menu-list row justify-content-md-between w-100 mx-1">
-
-                        <div class="row w-100 mx-auto">
-                            <div class="menu-title">
-                                <span class="title-line left-line"></span>
-                                <h1 class>غذای دریایی</h1>
-                                <span class="title-line right-line"></span>
-                            </div>
-                            <div
-                                class="  menu-item   row  ">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/seafood.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            بیکن برگر دودی پنیری
-                                        </h2>
-                                        <span class="product-caption">
-                                            یک عدد همبرگر گوشت گوساله همراه
-                                            بیکن دودی و پنیر چدار همراه با
-                                            سس مخصوص
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class=" price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="  menu-item   row  ">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/seafood2.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            دوبل بیکن برگر دودی پنیری
-                                        </h2>
-                                        <span class="product-caption">
-                                            دو عدد همبرگر گوشت گوساله همراه
-                                            بیکن دودی و پنیر چدار همراه با
-                                            سس مخصوص
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class=" price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="  menu-item   row  ">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/seafood3.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            غول برگر با سس مخصوص
-                                        </h2>
-                                        <span class="product-caption">
-                                            دو عدد همبرگر گوشت گوساله دست
-                                            ساز همراه پنیر با سس مخصوص
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class=" price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="  menu-item   row  ">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/meat.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            چیز برگر
-                                        </h2>
-                                        <span class="product-caption">
-                                            یک عدد همبرگر دست ساز ، دو عدد
-                                            پنیر ورقه ای چدار ، نان گرد
-                                            مخصوص برگر ، دو عدد سس کچاپ
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class=" price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="meat"
-                        class="meat menu-list row justify-content-md-between w-100 mx-1">
-                        <div class="row w-100 mx-auto">
-                            <div class="menu-title">
-                                <span class="title-line left-line"></span>
-                                <h1 class>گوشت</h1>
-                                <span class="title-line right-line"></span>
-                            </div>
-                            <div
-                                class="  menu-item   row  ">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/meat2.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            بیکن برگر دودی پنیری
-                                        </h2>
-                                        <span class="product-caption">
-                                            یک عدد همبرگر گوشت گوساله همراه
-                                            بیکن دودی و پنیر چدار همراه با
-                                            سس مخصوص
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class=" price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="  menu-item   row  ">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/meat3.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            دوبل بیکن برگر دودی پنیری
-                                        </h2>
-                                        <span class="product-caption">
-                                            دو عدد همبرگر گوشت گوساله همراه
-                                            بیکن دودی و پنیر چدار همراه با
-                                            سس مخصوص
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class=" price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="  menu-item   row  ">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/meat4.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            غول برگر با سس مخصوص
-                                        </h2>
-                                        <span class="product-caption">
-                                            دو عدد همبرگر گوشت گوساله دست
-                                            ساز همراه پنیر با سس مخصوص
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class=" price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="  menu-item   row  ">
-                                <div class=" img-name row">
-                                    <div class="col-5 item-img">
-                                        <img src="assest/img/meat4.jpg"
-                                            alt>
-                                    </div>
-                                    <div class=" col-7 item-name">
-                                        <h2 class="product-name">
-                                            چیز برگر
-                                        </h2>
-                                        <span class="product-caption">
-                                            یک عدد همبرگر دست ساز ، دو عدد
-                                            پنیر ورقه ای چدار ، نان گرد
-                                            مخصوص برگر ، دو عدد سس کچاپ
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class=" price-order row">
-                                    <div class="col-5 item-order">
-                                        <button class="order-btn">
-                                            جزئیات
-                                        </button>
-                                    </div>
-                                    <div class=" col-7 item-price">
-
-                                        <span
-                                            class="new-price">۱۳۵,۶۷۵</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <div class="footer_header">
-                <div class="footer_logo">
-                    <img src="assest/img/almas-logo.jpg" alt>
-                </div>
-                <div class="footer_adress">
-                    <span class="adress">
-                        تبریز ، کیلومتر 5 جاده ی تهران
-                    </span>
-                </div>
-            </div>
-            <div class="footer_body">
-                <div class="footer_socail">
-                    <a
-                        href="https://www.instagram.com/almas.azr?igsh=MWo3ZDhxcmVwd2EwNw=="
-                        class="instagram-link">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                </div>
-                <div class="footer_number">
-                    <i class="fa fa-phone"></i>
-                    <span>+989141157104</span>
-                </div>
-            </div>
-            <!-- <div class="footer_footer">
-                <span class="copywrite">
-                    تمامی حقوق برای مجتمع الماس آذربایجان محفوظ است.
-                </span>
-                <span class="power-copywrite">
-                    ساخته شده در
-                    <a href="https://techvibe.ir" class="techvibe">tech vibe</a>
-                    و
-                    <a href="https://nirvanatech.ir" class="nirvanatech">nirvana
-                        tech</a>
-                </span>
-            </div> -->
-        </div>
-
-        <!--main script file-->
-        <script async src="assest/js/script.js"></script>
-
-        <!--getdata js link-->
-        <!-- <script src="assest/js/getdata.js"></script> -->
-
         <!--bootstrap js link-->
-        <script defer
+        <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
         <!-- JavaScript Libraries -->
-        <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script defer
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script defer src="lib/wow/wow.min.js"></script>
-        <!-- <script src="lib/easing/easing.min.js"></script> -->
-        <!-- <script src="lib/waypoints/waypoints.min.js"></script> -->
-        <!-- <script src="lib/owlcarousel/owl.carousel.min.js"></script> -->
-        <script defer src="lib/isotope/isotope.pkgd.min.js"></script>
-        <!-- <script src="lib/lightbox/js/lightbox.min.js"></script> -->
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
 
         <!--anime js link-->
-        <script defer src="lib/animejs/anime.min.js"></script>
+        <script src="lib/animejs/anime.min.js"></script>
 
+        <!--isotope-->
+        <script src="assest/js/isotope.pkgd.min.js"></script>
         <!--swiper-->
-        <script defer src="assest/js/swiper-bundle.min.js"></script>
+        <script src="assest/js/script.js"></script>
+        <script src="assest/js/swiper-bundle.min.js"></script>
+        <script>
+            // wow library init
+            new WOW().init();
+            //swiper
+            var swiper = new Swiper(".swiper", {
+            slidesPerView: 4.5,
+            spaceBetween: 10,
+            loop: true,
+            centerSlide: 'true',
+            fade: 'true',
+            gragCursor: 'true',
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            });
 
-        <script type="module" src="lib/animejs/anime.es.js">
-            import anime from 'lib/animejs/anime.es.js';
         </script>
+
+        <script type="module">
+
+            import 'normalize.css';
+        </script>
+
     </body>
 </html>
