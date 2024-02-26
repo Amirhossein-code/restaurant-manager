@@ -32,6 +32,11 @@ function entery() {
         layoutMode: "fitRows",
       });
     });
+  fetch(`${baseUrl}app/items/?title=&category=1&category__title__icontains=`)
+    .then((res) => res.json())
+    .then((data) => {
+      firstItem(data.results);
+    });
   menuListContainer.style.display = "none";
 }
 function categoryCreate(categories) {
@@ -85,11 +90,6 @@ function categoryCreate(categories) {
 }
 
 function itemCreate(items) {
-  fetch(`${baseUrl}app/items/?title=&category=1&category__title__icontains=`)
-    .then((res) => res.json())
-    .then((data) => {
-      firstItem(data.results);
-    });
   for (let x in items) {
     var item_id = items[x].id,
       item_title = items[x].title,
