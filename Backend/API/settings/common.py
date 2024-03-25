@@ -129,12 +129,6 @@ SIMPLE_JWT = {
 }
 
 
-CORS_ALLOWED_ORIGINS = [
-    "http://5.34.196.45",
-    "http://5.34.196.45:8000",
-]
-
-
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
