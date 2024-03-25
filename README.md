@@ -1,9 +1,9 @@
 # 🍽️ Simple Restaurant Menu Website
 
 **🔺 Description:**
-A restaurant menu website with essential features that allow the admin to define items, categorize them, define ingredients for the items, and specify the food values of each item.
+A production ready restaurant menu website with essential features that allow the admin to define items, categorize them, define ingredients for the items, and specify the food values of each item.
 
-**🔺 Features:**
+**🔺 Key Features:**
 
 - Superusers can define items, categories, ingredients, and food values for each item.
 - The Django admin panel is available for super users in Persian.
