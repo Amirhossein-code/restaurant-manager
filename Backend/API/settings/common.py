@@ -16,7 +16,6 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
-    "djoser",
     "django_filters",
     "corsheaders",
 ]
@@ -25,7 +24,6 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "app",
     "common",
-    "control_center",
     "core",
 ]
 
@@ -113,13 +111,6 @@ REST_FRAMEWORK = {
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
 
-DJOSER = {
-    "REGISTER": False,
-    "SERIALIZERS": {
-        "user_create": "core.serializers.UserCreateSerializer",
-        "current_user": "core.serializers.UserSerializer",
-    },
-}
 
 AUTH_USER_MODEL = "core.User"
 

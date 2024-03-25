@@ -1,0 +1,16 @@
+```
+docker-compose up --build -d
+```
+
+##Createing SuperUser
+
+```
+docker exec -it django /bin/sh
+```
+
+```
+python manage.py createsuperuser
+```
+Enter the credentials required 
+
+Exit using cntl+D
