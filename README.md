@@ -29,7 +29,12 @@ A production ready restaurant menu website with essential features that allow th
 git clone https://github.com/Amirhossein-code/restaurant-menu-manager.git
 ```
 
-2. **⚙️ Configure Environment Variables**: Next, configure the `.env` file with the necessary credentials.
+2. **⚙️ Configure Environment Variables**: Next, configure the `.env` file with the necessary credentials..
+
+   - Generate a new Production Secret Key for enhanced security.(You may use https://djecrety.ir/)
+   - Update the Database Credentials as you like
+   - Adjust the Allowed Hosts, CORS settings, and DOMAIN to match the domain you will be using.
+     For local development, keep them as localhost (default settings) for testing purposes.
 
 3. **🏗️ Build and Run**: Build and run the project using the following command:
 
@@ -53,4 +58,4 @@ Follow the prompts to enter the necessary credentials.
 
 5. **🔑 Access Admin Panel**: Exit the terminal and login to the admin panel at:
 
-example.com:8000/admin
+localhost:8000/admin
