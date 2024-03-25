@@ -60,7 +60,7 @@ Follow the prompts to enter the necessary credentials.
 
 localhost:8000/admin
 
-## Endpoint Documentation for the Frontend Developer
+## Endpoints Documentation for the Frontend Developer
 
 Access the Django admin endpoint:
 
