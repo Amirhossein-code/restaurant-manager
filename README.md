@@ -20,3 +20,37 @@ A restaurant menu website with essential features that allow the admin to define
 **Backend Developer:** Amirhossein Edadi
 
 **Frontend:** Frontend collaborator Amin Sheikh Azimi is working on the frontend of the project.
+
+## Usage and Deployment
+
+1. **Clone the Project**: First, clone the project using Git clone:
+
+```
+git clone https://github.com/Amirhossein-code/restaurant-menu-manager.git
+```
+
+2. **Configure Environment Variables**: Next, configure the `.env` file with the necessary credentials.
+
+3. **Build and Run**: Build and run the project using the following command:
+
+```
+docker-compose up --build -d
+```
+
+4. **Creating Super User**: To create a super user, open a terminal inside the Django container:
+
+```
+docker exec -it django /bash/sh
+```
+
+Then create the super user with the command:
+
+```
+python manage.py createsuperuser
+```
+
+Follow the prompts to enter the necessary credentials.
+
+5. **Access Admin Panel**: Exit the terminal and login to the admin panel at:
+
+example.com:8000/admin
