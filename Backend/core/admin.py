@@ -3,6 +3,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .models import User
 
 # Register your models here.
+admin.site.site_header = "مجتمع الماس آذربایجان"
 
 
 @admin.register(User)
