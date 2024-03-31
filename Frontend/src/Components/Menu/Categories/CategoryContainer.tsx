@@ -6,16 +6,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-interface Props{
-  onSwiper = () => void
-}
 interface Category {
   id: number;
   name: string;
   img: string;
 }
 
-const CategoryContainer = ({onSwiper} : Props) => {
+const CategoryContainer = () => {
   return (
     <div className="w-full h-full flex-center">
       <Swiper
@@ -24,13 +21,12 @@ const CategoryContainer = ({onSwiper} : Props) => {
         spaceBetween={50}
         slidesPerView={3}
         navigation
-        onSlideChange={onSwiper}
       >
         {CategoryList.map((item) => {
           return (
             <SwiperSlide key={item.id}>
               <div>
-                <Category id={item.id} name={item.name} img={item.img} />
+                <Category slug={item.slug} id={item.id} name={item.name} img={item.img} />
               </div>
             </SwiperSlide>
           );
