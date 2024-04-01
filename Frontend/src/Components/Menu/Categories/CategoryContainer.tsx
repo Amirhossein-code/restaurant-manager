@@ -1,5 +1,6 @@
+import axios, { CanceledError } from "axios";
+import { useState, useEffect } from "react";
 import Category from "./Category";
-import CategoryList from "./CategoryList";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -8,11 +9,31 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 interface Category {
   id: number;
-  name: string;
-  img: string;
+  title: string;
+  image: string;
+  slug: string;
 }
-
+interface ApiResponse {
+  results: Category[];
+}
 const CategoryContainer = () => {
+  const [categories, setCategories] = useState<Category[]>([]);
+  useEffect(() => {
+    const controller = new AbortController();
+    axios
+      .get<ApiResponse>("http://localhost:8000/app/categories/", {
+        signal: controller.signal,
+      })
+      .then((response) => {
+        setCategories(response.data.results);
+      })
+      .catch((error) => {
+        if (error instanceof CanceledError) return;
+        console.error(error);
+      });
+    return () => controller.abort();
+  }, []);
+  console.log(categories);
   return (
     <div className="w-full h-full flex-center">
       <Swiper
@@ -22,11 +43,16 @@ const CategoryContainer = () => {
         slidesPerView={3}
         navigation
       >
-        {CategoryList.map((item) => {
+        {categories.map((item) => {
           return (
             <SwiperSlide key={item.id}>
               <div>
-                <Category slug={item.slug} id={item.id} name={item.name} img={item.img} />
+                <Category
+                  slug={item.slug}
+                  id={item.id}
+                  name={item.title}
+                  img={item.image}
+                />
               </div>
             </SwiperSlide>
           );
