@@ -19,3 +19,7 @@ DATABASES = {
         "PORT": os.environ["DB_PORT_LOCAL"],
     }
 }
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',
+]
